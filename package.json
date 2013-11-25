@@ -1,0 +1,29 @@
+{
+  "name": "d3-patternfills",
+  "version": "0.1.0",
+  "description": "A set of pattern fills for svg & css",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iros/d3-patternfills"
+  },
+  "keywords": [
+    "d3.js",
+    "visualization",
+    "svg",
+    "patterns",
+    "fills"
+  ],
+  "author": {
+    "name": "Irene Ros",
+    "uri": "https://github.com/iros"
+  },
+  "license": "MIT Expat",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-connect": "~0.5.0",
+    "d3": "*",
+    "btoa": "~1.1.1",
+    "underscore": "~1.5.2"
+  }
+}

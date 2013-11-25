@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>d3 pattern fills, sample.</title>
+    <script type="text/javascript" src="lib/d3.min.js"></script>
+  </head>
+  <body>
+    
+    <div id="patterns" style="height:0;">
+        <%= patterns %>
+    </div>
+
+    <div id="samples">
+    </div>
+
+    <script>
+      var container = d3.select("#samples");
+      function makeRect(name) {
+        var row = container.append("div")
+          .style("display", "inline-block")
+          .style("width", "100%");
+
+        row.append("svg")
+          .attr("height", "150")
+          .attr("width", "150")
+          .style("float", "left")
+            .append("rect")
+            .style("fill", "url(#"+name+")")
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("height", 150)
+            .attr("width", 150);
+
+        row.append("div")
+          .style("float", "left")
+          .text(name);
+      }
+
+      <%= d3Script %>
+    </script>
+  </body>
+</html>

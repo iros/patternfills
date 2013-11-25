@@ -1,0 +1,4 @@
+.<%= name %> {
+  background-image: url("<%= imagedata %>");
+  background-repeat: repeat;
+}
