@@ -98,5 +98,9 @@ The project is setup with live reloading, so that any time you modify any of the
 
 Ideally, this pattern library will grow and contain many new patterns! Please submit yours in a pull request and I will be more than happy to merge them if they work appropriatly.
 
+Currently our patterns are:
+
+![patterns](http://gyazo.com/0888bddacd77e634a78bf7097dc4df31.png "patterns")
+
 Thanks
 - @iros.
