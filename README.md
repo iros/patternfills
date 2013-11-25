@@ -1,6 +1,6 @@
-# d3-patternfills
+# PatternFills
 
-This is a collection of svg-based pattern fills that can be used both as SVG patterns defs and CSS background image urls.
+This is a collection of svg-based pattern fills that can be used both as SVG patterns defs and CSS background image urls. A lot of these pattens started from: http://philbit.com/svgpattern/ which is an amazing project.
 
 ## Project structure:
 
@@ -23,6 +23,60 @@ Then run the render task:
 `grunt render` or simply `grunt`.
 
 The files will be built and put into the `build` folder. If you don't intend to customize the patterns or add new ones, you can simply look at the generated code and use it for your own needs.
+
+## How do patterns work?
+
+In this project, we are using patterns in two different ways:
+
+1. Using actual patterns for svg
+2. Using base64 encoded strings for css-based fills.
+
+SVG images are typically smaller than bitmap images and remain sharp on high-dpi screens. Unlike CSS3 gradients, SVG images are supported on IE9. (source: http://philbit.com/svgpatterns/#whysvg)
+
+### SVG patterns
+
+To define a pattern that can then be used in svg, one must add it to the defs section of an svg container:
+
+```
+<svg height="8" width="8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <pattern id="crosshatch" patternUnits="userSpaceOnUse" width="8" height="8">
+      <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4JyBoZWlnaHQ9JzgnPgogIDxyZWN0IHdpZHRoPSc4JyBoZWlnaHQ9JzgnIGZpbGw9JyNmZmYnLz4KICA8cGF0aCBkPSdNMCAwTDggOFpNOCAwTDAgOFonIHN0cm9rZS13aWR0aD0nMC41JyBzdHJva2U9JyNhYWEnLz4KPC9zdmc+Cg==" x="0" y="0" width="8" height="8">
+      </image>
+    </pattern>
+  </defs>
+</svg>
+```
+
+Important parts to note about this section are:
+1. The pattern id string
+
+To use the pattern to color in some svg element, like a rect, simply set the style attribute `fill` to the string: `url(#patternName) #fallbackcolor`. For example:
+
+```
+<svg height="150" width="150" style="float:left">
+  <rect style="fill: url(#crosshatch) #fff;" x="0" y="0" height="150" width="150">
+  </rec>
+</svg>
+```
+
+### CSS patterns
+
+Css patterns utilize image fills. For exmple, the following is a definition of one of our patterns, converted to base64 string and turned into a css class definition:
+
+```
+.crosshatch {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4JyBoZWlnaHQ9JzgnPgogIDxyZWN0IHdpZHRoPSc4JyBoZWlnaHQ9JzgnIGZpbGw9JyNmZmYnLz4KICA8cGF0aCBkPSdNMCAwTDggOFpNOCAwTDAgOFonIHN0cm9rZS13aWR0aD0nMC41JyBzdHJva2U9JyNhYWEnLz4KPC9zdmc+Cg==");
+  background-repeat: repeat;
+}
+```
+
+Then simply use the class name:
+
+```
+<div style="width: 150px; height: 150px; float:left" class="lightstripe">
+</div>
+```
 
 ## Modifying/Adding patterns
 
