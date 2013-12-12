@@ -2,7 +2,7 @@
 
 This is a collection of svg-based pattern fills that can be used both as SVG patterns defs and CSS background image urls. There is also an example of how one might use pattern fills with d3.js. 
 
-A lot of these pattens started from: http://philbit.com/svgpattern/ which is an amazing project.
+A lot of these pattens started from: http://philbit.com/svgpatterns/ which is an amazing project.
 
 ## Project structure:
 
@@ -76,7 +76,7 @@ Css patterns utilize image fills. For exmple, the following is a definition of o
 Then simply use the class name:
 
 ```
-<div style="width: 150px; height: 150px; float:left" class="lightstripe">
+<div style="width: 150px; height: 150px; float:left" class="crosshatch">
 </div>
 ```
 
