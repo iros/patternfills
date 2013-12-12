@@ -76,7 +76,7 @@ Css patterns utilize image fills. For exmple, the following is a definition of o
 Then simply use the class name:
 
 ```
-<div style="width: 150px; height: 150px; float:left" class="lightstripe">
+<div style="width: 150px; height: 150px; float:left" class="crosshatch">
 </div>
 ```
 
