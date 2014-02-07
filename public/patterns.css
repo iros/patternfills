@@ -2,6 +2,10 @@
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='#fff' d='M0 0h8v8h-8z'/><path d='M0 0l8 8zm8 0l-8 8z' stroke-width='.5' stroke='#aaa'/></svg>");
   background-repeat: repeat;
 }
+.houndstooth {
+  background-image: url("data:image/svg+xml,<svg width='10' height='10' xmlns='http://www.w3.org/2000/svg'><path d='M0 0l4 4M2.5 0l2.5 2.5v2.5l4 4-4-4h5v-5M5 10v-2.5l2.5 2.5' stroke='#aaa' fill='#aaa'/></svg>");
+  background-repeat: repeat;
+}
 .lightstripe {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='5'><path fill='#fff' d='M0 0h5v5h-5z'/><path d='M0 5l5-5zm6-1l-2 2zm-7-3l2-2z' stroke='#888'/></svg>");
   background-repeat: repeat;
