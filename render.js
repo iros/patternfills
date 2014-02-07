@@ -1,9 +1,15 @@
 /* global require,console */
 
-var d3 = require("d3");
 var _ = require("underscore");
 var fs = require("fs");
-var btoa = require("btoa");
+var SVGO = require("svgo");
+var svgo = new SVGO({
+  convertStyleToAttrs: true,
+  js2svg: {
+    attrStart: "='",
+    attrEnd: "'"
+  }
+});
 
 function templifyPath(url) {
   return _.template(fs.readFileSync(url,{ encoding: "utf-8" }));
@@ -35,12 +41,12 @@ var templates = {
 };
 
 var outputStrings = {
-  svg: "", css: "", svgSamples: "", divSamples: "", div: "", d3Samples: ""
+  svg: [], css: [], svgSamples: [], divSamples: [], div: [], d3Samples: []
 };
 
-for(var i = 0; i < patterns.length; i++) {
+var processingCount = patterns.length;
 
-  var patternFile = patterns[i];
+patterns.forEach(function(patternFile, patternIndex) {
   var patternFilePath = "./src/patterns/" + patternFile;
   var patternName = /(.*).svg/.exec(patternFile)[1];
 
@@ -48,57 +54,60 @@ for(var i = 0; i < patterns.length; i++) {
 
   var pattern = fs.readFileSync(patternFilePath, { encoding: "utf-8" });
 
-  // make base64 string of inner html
-  var b64 = btoa(pattern);
+  svgo.optimize(pattern, function(optimized) {
+    // build template data
+    var data = {
+      height: optimized.info.height,
+      width: optimized.info.width,
+      name: patternName,
+      imagedata: "data:image/svg+xml," + optimized.data
+    };
 
-  // make url string
-  b64 = "data:image/svg+xml;base64," + b64;
+    // pattern defs
+    outputStrings.svg[patternIndex] = templates.pattern.html(data);
+    // pattern css file
+    outputStrings.css[patternIndex] = templates.pattern.css(data);
+    // svg pattern using rects
+    outputStrings.svgSamples[patternIndex] = templates.components.rect(data);
+    // css pattern using divs
+    outputStrings.divSamples[patternIndex] = templates.components.div(data);
+    // d3 code pattern samples
+    outputStrings.d3Samples[patternIndex] = templates.components.d3Snippet(data);
+    finish();
+  });
+});
 
-  // find dimensions
-  var mockNode = d3.select("body").html(pattern);
-  var height = mockNode.select("svg").attr("height");
-  var width = mockNode.select("svg").attr("width");
+function finish()
+{
+  if (!--processingCount)
+  {
+    _.each(outputStrings, function(value, key) {
+      outputStrings[key] = value.join("");
+    });
 
-  // build template data
-  var data = {
-    height: height,
-    width: width,
-    name: patternName,
-    imagedata: b64
-  };
+    console.log("Writing pattern.css");
+    writeOutFile("./build/patterns.css", outputStrings.css);
 
-  // pattern defs
-  outputStrings.svg += templates.pattern.html(data);
-  // pattern css file
-  outputStrings.css += templates.pattern.css(data);
-  // svg pattern using rects
-  outputStrings.svgSamples += templates.components.rect(data);
-  // css pattern using divs
-  outputStrings.divSamples += templates.components.div(data);
-  // d3 code pattern samples
-  outputStrings.d3Samples += templates.components.d3Snippet(data);
+    console.log("Writing sample_css.html");
+    writeOutFile("./build/sample_css.html", templates.output.css({
+      samples: outputStrings.divSamples
+    }));
+
+    console.log("Writing sample_svg.html");
+    writeOutFile("./build/sample_svg.html", templates.output.svg({
+      patterns: outputStrings.svg,
+      samples: outputStrings.svgSamples
+    }));
+
+    console.log("Writing sample_d3.html");
+    writeOutFile("./build/sample_d3.html", templates.output.d3({
+      patterns: outputStrings.svg,
+      d3Script: outputStrings.d3Samples
+    }));
+  }
 }
 
 function writeOutFile(path, contents) {
   fs.writeFileSync(path, contents, {encoding: "utf-8"});
 }
 
-console.log("Writing pattern.css");
-writeOutFile("./build/patterns.css", outputStrings.css);
-
-console.log("Writing sample_css.html");
-writeOutFile("./build/sample_css.html", templates.output.css({
-  samples: outputStrings.divSamples
-}));
-
-console.log("Writing sample_svg.html");
-writeOutFile("./build/sample_svg.html", templates.output.svg({
-  patterns: outputStrings.svg,
-  samples: outputStrings.svgSamples
-}));
-
-console.log("Writing sample_d3.html");
-writeOutFile("./build/sample_d3.html", templates.output.d3({
-  patterns: outputStrings.svg,
-  d3Script: outputStrings.d3Samples
-}));
