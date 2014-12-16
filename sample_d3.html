@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>d3 pattern fills, sample.</title>
+    <script type="text/javascript" src="d3/d3.min.js"></script>
+  </head>
+  <body>
+
+    <div id="patterns" style="height:0;">
+        <svg height="8" width="8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <pattern id="crosshatch" patternUnits="userSpaceOnUse" width="8" height="8">
+      <image xlink:href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='#fff' d='M0 0h8v8h-8z'/><path d='M0 0l8 8zm8 0l-8 8z' stroke-width='.5' stroke='#aaa'/></svg>" x="0" y="0" width="8" height="8">
+      </image>
+    </pattern>
+  </defs>
+</svg>
+<svg height="5" width="5" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <pattern id="lightstripe" patternUnits="userSpaceOnUse" width="5" height="5">
+      <image xlink:href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='5'><path fill='#fff' d='M0 0h5v5h-5z'/><path d='M0 5l5-5zm6-1l-2 2zm-7-3l2-2z' stroke='#888'/></svg>" x="0" y="0" width="5" height="5">
+      </image>
+    </pattern>
+  </defs>
+</svg>
+<svg height="5" width="5" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <pattern id="smalldot" patternUnits="userSpaceOnUse" width="5" height="5">
+      <image xlink:href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='5'><path fill='#fff' d='M0 0h5v5h-5z'/><path fill='#ccc' d='M0 0h1v1h-1z'/></svg>" x="0" y="0" width="5" height="5">
+      </image>
+    </pattern>
+  </defs>
+</svg>
+<svg height="49" width="6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <pattern id="verticalstripe" patternUnits="userSpaceOnUse" width="6" height="49">
+      <image xlink:href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='49'><path fill='#fff' d='M0 0h3v50h-3z'/><path fill='#ccc' d='M3 0h1v50h-1z'/></svg>" x="0" y="0" width="6" height="49">
+      </image>
+    </pattern>
+  </defs>
+</svg>
+<svg height="6" width="6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <pattern id="whitecarbon" patternUnits="userSpaceOnUse" width="6" height="6">
+      <image xlink:href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='6' height='6'><path fill='#eee' d='M0 0h6v6h-6z'/><g id='a'><path fill='#e6e6e6' d='M0 0h3v3h-3z'/><path fill='#d8d8d8' d='M0 1h3v2h-3z'/></g><use xlink:href='#a' x='3' y='3'/></svg>" x="0" y="0" width="6" height="6">
+      </image>
+    </pattern>
+  </defs>
+</svg>
+
+    </div>
+
+    <div id="samples">
+    </div>
+
+    <script>
+      var container = d3.select("#samples");
+      function makeRect(name) {
+        var row = container.append("div")
+          .style("display", "inline-block")
+          .style("width", "100%");
+
+        row.append("svg")
+          .attr("height", "150")
+          .attr("width", "150")
+          .style("float", "left")
+            .append("rect")
+            .style("fill", "url(#"+name+")")
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("height", 150)
+            .attr("width", 150);
+
+        row.append("div")
+          .style("float", "left")
+          .text(name);
+      }
+
+      makeRect("crosshatch");
+makeRect("lightstripe");
+makeRect("smalldot");
+makeRect("verticalstripe");
+makeRect("whitecarbon");
+
+    </script>
+  </body>
+</html>
