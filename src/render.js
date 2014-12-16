@@ -23,25 +23,30 @@ var patterns = fs.readdirSync("./src/patterns");
 var templates = {
 
   pattern : {
-    html : templifyPath("./src/templates/pattern.html"),
-    css: templifyPath("./src/templates/pattern.css")
+    svg : templifyPath("./src/templates/svg/pattern.html"),
+    css: templifyPath("./src/templates/css/pattern.css")
   },
 
   components: {
-    rect: templifyPath("./src/templates/rect.html"),
-    div: templifyPath("./src/templates/div.html"),
-    d3Snippet: templifyPath("./src/templates/d3Snippet.js")
+    rect: templifyPath("./src/templates/svg/rect.html"),
+    div: templifyPath("./src/templates/css/div.html"),
+    d3Snippet: templifyPath("./src/templates/d3/d3Snippet.js")
   },
 
   output: {
-    svg: templifyPath("./src/templates/sample_svg.html"),
-    css: templifyPath("./src/templates/sample_css.html"),
-    d3: templifyPath("./src/templates/sample_d3.html")
+    svg: templifyPath("./src/templates/pages/sample_svg.html"),
+    css: templifyPath("./src/templates/pages/sample_css.html"),
+    d3: templifyPath("./src/templates/pages/sample_d3.html")
   }
 };
 
 var outputStrings = {
-  svg: [], css: [], svgSamples: [], divSamples: [], div: [], d3Samples: []
+  svg: [],
+  css: [],
+  svgSamples: [],
+  divSamples: [],
+  div: [],
+  d3Samples: []
 };
 
 var processingCount = patterns.length;
@@ -64,7 +69,7 @@ patterns.forEach(function(patternFile, patternIndex) {
     };
 
     // pattern defs
-    outputStrings.svg[patternIndex] = templates.pattern.html(data);
+    outputStrings.svg[patternIndex] = templates.pattern.svg(data);
     // pattern css file
     outputStrings.css[patternIndex] = templates.pattern.css(data);
     // svg pattern using rects
@@ -77,30 +82,28 @@ patterns.forEach(function(patternFile, patternIndex) {
   });
 });
 
-function finish()
-{
-  if (!--processingCount)
-  {
+function finish() {
+  if (!--processingCount) {
     _.each(outputStrings, function(value, key) {
       outputStrings[key] = value.join("");
     });
 
     console.log("Writing pattern.css");
-    writeOutFile("./build/patterns.css", outputStrings.css);
+    writeOutFile("./public/patterns.css", outputStrings.css);
 
     console.log("Writing sample_css.html");
-    writeOutFile("./build/sample_css.html", templates.output.css({
+    writeOutFile("./public/sample_css.html", templates.output.css({
       samples: outputStrings.divSamples
     }));
 
     console.log("Writing sample_svg.html");
-    writeOutFile("./build/sample_svg.html", templates.output.svg({
+    writeOutFile("./public/sample_svg.html", templates.output.svg({
       patterns: outputStrings.svg,
       samples: outputStrings.svgSamples
     }));
 
     console.log("Writing sample_d3.html");
-    writeOutFile("./build/sample_d3.html", templates.output.d3({
+    writeOutFile("./public/sample_d3.html", templates.output.d3({
       patterns: outputStrings.svg,
       d3Script: outputStrings.d3Samples
     }));

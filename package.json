@@ -19,10 +19,10 @@
   },
   "license": "MIT Expat",
   "devDependencies": {
-    "grunt": "~0.4.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-connect": "~0.5.0",
     "d3": "*",
+    "grunt": "~0.4.5",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-watch": "~0.6.1",
     "svgo": "0.4.4",
     "underscore": "~1.5.2"
   }

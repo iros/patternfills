@@ -1,6 +1,6 @@
 # PatternFills
 
-This is a collection of svg-based pattern fills that can be used both as SVG patterns defs and CSS background image urls. There is also an example of how one might use pattern fills with d3.js. 
+This is a collection of svg-based pattern fills that can be used both as SVG patterns defs and CSS background image urls. There is also an example of how one might use pattern fills with d3.js.
 
 A lot of these pattens started from: http://philbit.com/svgpatterns/ which is an amazing project.
 
@@ -10,9 +10,9 @@ All the patterns live under `src/patterns`. Each file is a single svg file conta
 
 To view any of the patterns, one must build the sample files. There are three of them that are created:
 
-* `build/sample_svg.html` - a raw sample of using the pattens within SVG.
-* `build/sample_css.html` - a sample of using the patterns after they are converted to css image urls. See the accompanying `pattern.css`.
-* `build/sample_d3.html` - a sample of d3 code that generates the same exact output that `sample_svg.html` does, but using d3.js.
+* `public/sample_svg.html` - a raw sample of using the pattens within SVG.
+* `public/sample_css.html` - a sample of using the patterns after they are converted to css image urls. See the accompanying `pattern.css`.
+* `public/sample_d3.html` - a sample of d3 code that generates the same exact output that `sample_svg.html` does, but using d3.js.
 
 ## Building sample files:
 
@@ -24,7 +24,7 @@ Then run the render task:
 
 `grunt render` or simply `grunt`.
 
-The files will be built and put into the `build` folder. If you don't intend to customize the patterns or add new ones, you can simply look at the generated code and use it for your own needs.
+The files will be built and put into the `public` folder. If you don't intend to customize the patterns or add new ones, you can simply look at the generated code and use it for your own needs.
 
 ## How do patterns work?
 
@@ -88,7 +88,7 @@ First, set up your development environemnt, if you haven't already:
 
 Then open two terminal windows, both at the root of this repository. From one, run:
 
-`grunt watch` - this will watch for any changes under the `src` directory and rebuild the sample files
+`grunt dev` - this will watch for any changes under the `src` directory and rebuild the sample files, while running a dev server.
 
 From the other run:
 
