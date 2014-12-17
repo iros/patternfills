@@ -1,5 +1,7 @@
 # PatternFills
 
+See the live site here: http://iros.github.io/patternfills/
+
 This is a collection of svg-based pattern fills that can be used both as SVG patterns defs and CSS background image urls. There is also an example of how one might use pattern fills with d3.js.
 
 A lot of these pattens started from: http://philbit.com/svgpatterns/ which is an amazing project.
@@ -100,9 +102,10 @@ The project is setup with live reloading, so that any time you modify any of the
 
 Ideally, this pattern library will grow and contain many new patterns! Please submit yours in a pull request and I will be more than happy to merge them if they work appropriatly.
 
-Currently our patterns are:
+Currently some of our patterns are:
 
-![patterns](http://gyazo.com/0888bddacd77e634a78bf7097dc4df31.png "patterns")
+![patterns](http://i.gyazo.com/b52c5ed993b7d091805a6b8ae53f7a6e.png "patterns")
 
+But you should check them all out at http://iros.github.io/patternfills/
 Thanks
 - @iros.
