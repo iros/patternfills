@@ -4,8 +4,49 @@
     <meta charset="utf-8">
     <title>d3 pattern fills, sample.</title>
     <script type="text/javascript" src="d3/d3.min.js"></script>
+
+    <style type="text/css">
+      body {
+        font-family: Raleway, Open Sans, Helvetica, sans-serif;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 50px;
+      }
+      .svg_pattern {
+        display:inline-block;
+        width: 30%;
+        padding: 10px;
+        background-color: #eaeaea;
+        border: 1px solid #ddd;
+        margin-left:1%;
+      }
+      .pattern-swatch {
+        border: 1px solid #aaa;
+      }
+      .pattern_name {
+        float:left;
+        padding: 10px;
+      }
+    </style>
+
   </head>
   <body>
+     <header>
+      <h1>Pattern Library: D3 Examples</h1>
+      <p>The following examples are all created with d3 and use svg patterns. You can examine the source to see the pattern defs, and the d3 code that uses them. For reference, here's a relevant snippet:</p>
+      <p>
+        <pre>
+        <code>
+          selection.append("rect")
+            .style("fill", "url(#circles-1)")
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("height", 150)
+            .attr("width", 150);
+        </code>
+      </pre>
+      </p>
+    </header>
 
     <div id="patterns" style="height:0;">
         <%= patterns %>
@@ -18,23 +59,24 @@
       var container = d3.select("#samples");
       function makeRect(name) {
         var row = container.append("div")
-          .style("display", "inline-block")
-          .style("width", "100%");
+          .classed("svg_pattern", true);
 
         row.append("svg")
-          .attr("height", "150")
-          .attr("width", "150")
+          .attr("height", "100")
+          .attr("width", "100")
           .style("float", "left")
             .append("rect")
             .style("fill", "url(#"+name+")")
             .attr("x", 0)
             .attr("y", 0)
-            .attr("height", 150)
-            .attr("width", 150);
+            .attr("height", 100)
+            .attr("width", 100);
 
         row.append("div")
-          .style("float", "left")
-          .text(name);
+          .classed("pattern_name", true)
+          .html(function() {
+            return "Fill url name: <br /><br /><strong>#" + name + "</strong>";
+          });
       }
 
       <%= d3Script %>

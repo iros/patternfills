@@ -4,9 +4,46 @@
     <meta charset="utf-8">
     <title>css pattern fills, sample.</title>
     <link rel="stylesheet" href="patterns.css">
+    <style type="text/css">
+      body {
+        font-family: Raleway, Open Sans, Helvetica, sans-serif;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 50px;
+      }
+      .css_pattern {
+        display:inline-block;
+        width: 30%;
+        padding: 10px;
+        background-color: #eaeaea;
+        border: 1px solid #ddd;
+        margin-left:1%;
+      }
+      .pattern-swatch {
+        border: 1px solid #aaa;
+      }
+      .pattern_name {
+        float:left;
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
-
+    <header>
+      <h1>Pattern Library: CSS Examples</h1>
+      <p>The following patterns are available as class names in the
+        <a href="patterns.css"><code>patterns.css</code></a> file. Here's what a classname might look like:</p>
+      <p>
+        <pre>
+          <code>
+            .circles-1 {
+              background-image: url(&quot;data:image/svg+xml,&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&gt;&lt;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&gt;&lt;circle cx=&#39;1&#39; cy=&#39;1&#39; r=&#39;1&#39;/&gt;&lt;/svg&gt;&quot;);
+              background-repeat: repeat;
+            }
+          </code>
+        </pre>
+      </p>
+    </header>
     <div id="samples">
         <%= samples %>
     </div>

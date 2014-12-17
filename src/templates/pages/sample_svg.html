@@ -3,9 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>svg pattern fills, sample.</title>
+
+    <style type="text/css">
+      body {
+        font-family: Raleway, Open Sans, Helvetica, sans-serif;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 50px;
+      }
+      .svg_pattern {
+        display:inline-block;
+        width: 30%;
+        padding: 10px;
+        background-color: #eaeaea;
+        border: 1px solid #ddd;
+        margin-left:1%;
+      }
+      .pattern-swatch {
+        border: 1px solid #aaa;
+      }
+      .pattern_name {
+        float:left;
+        padding: 10px;
+      }
+    </style>
+
   </head>
   <body>
-    
+    <header>
+      <h1>Pattern Library: SVG Examples</h1>
+      <p>The following patterns are all defined as SVG patterns. You can inspect the source to see them and how they are used.</p>
+    </header>
     <div id="patterns" style="height:0;">
         <%= patterns %>
     </div>

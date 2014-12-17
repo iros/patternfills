@@ -36,7 +36,9 @@ var templates = {
   output: {
     svg: templifyPath("./src/templates/pages/sample_svg.html"),
     css: templifyPath("./src/templates/pages/sample_css.html"),
-    d3: templifyPath("./src/templates/pages/sample_d3.html")
+    d3: templifyPath("./src/templates/pages/sample_d3.html"),
+    index: templifyPath("./src/templates/pages/index.html"),
+    patterns_css: templifyPath("./src/templates/pages/patterns.css")
   }
 };
 
@@ -89,7 +91,9 @@ function finish() {
     });
 
     console.log("Writing pattern.css");
-    writeOutFile("./public/patterns.css", outputStrings.css);
+    writeOutFile("./public/patterns.css", templates.output.patterns_css({
+      patterns: outputStrings.css
+    }));
 
     console.log("Writing sample_css.html");
     writeOutFile("./public/sample_css.html", templates.output.css({
@@ -107,6 +111,10 @@ function finish() {
       patterns: outputStrings.svg,
       d3Script: outputStrings.d3Samples
     }));
+
+    console.log("Writing pattern.css");
+    writeOutFile("./public/index.html", templates.output.index());
+
   }
 }
 
