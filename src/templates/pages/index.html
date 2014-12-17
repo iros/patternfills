@@ -38,7 +38,7 @@
     </p>
 
     <p>
-      In this repository, show how one can create new patterns and use them in three ways:
+      We are going to be using svg patterns in three ways. Click the following links to see the patterns and how they are used.
 
       <ul>
         <li><a href="sample_css.html">CSS Classnames</a></li>
@@ -56,8 +56,8 @@
       <br>
       <svg style="padding:10px;" height="100" width="100" class="pattern-swatch">
         <rect style="fill: url(#circles-1) #fff;" x="0" y="0" height="100" width="100">
-
       </rect></svg>
+    </p>
 
     <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=pattern.svg"></script>
 
@@ -66,19 +66,24 @@
     </p>
 
     <h3>1. SVG Pattern Definition:</h3>
-
+    <p>
     To define a pattern that can then be used in svg, one must add it to the defs section of an svg container. Note that the SVG pattern we defined above gets translated into a string.
+    </p>
+    <p>
     <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=pattern_def_sample.html"></script>
 
     <p>
       This allows us to use the pattern like so:
+    </p>
+    <p>
       <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=svg_pattern_use.html"></script>
     </p>
 
 
     <h3>2. CSS Background Image Url</h3>
-
+    <p>
     To define a pattern that can be used with a classname, one must define a classname where the pattern string is used as the `background-image` url. For example:
+    </p>
 
     <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=pattern.css"></script>
 
@@ -87,7 +92,7 @@
       <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=svg_pattern_use.html"></script>
     </p>
 
-    <h3>What does this library do:</h3>
+    <h2>What does this library do:</h2>
 
     <p>
       Patternfills offers several premade patterns that can be used already.
@@ -97,6 +102,18 @@
       For the SVG form of the patterns, you should look at <code>public/sample_svg.html</code> to view the actual compiled pattern svg definitions.
     </p>
 
+    <h2>How do I add patterns?</h2>
+
+    <p>
+      You can see the development instructions in the readme here:
+      <a href="https://github.com/iros/patternfills/blob/master/README.md#modifyingadding-patterns">https://github.com/iros/patternfills/blob/master/README.md#modifyingadding-patterns</a>
+    </p>
+
+    <h2>Questions?</h2>
+
+    <p>
+      Please get in touch via github issues if you have any questions/requests of this project or contact me (<a href="http://twitter.com/ireneros">@ireneros</a>) via email at irene at bocoup.com.
+    </p>
   <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
       <defs>
         <pattern id="circles-1" patternUnits="userSpaceOnUse" width="10" height="10">
