@@ -26,27 +26,54 @@
         float:left;
         padding: 10px;
       }
+      .clicktosee {
+        display: inline-block;
+        color: steelblue;
+        cursor: pointer;
+        padding: 5px;
+        margin-top: 5px;
+        font-size: 0.8em;
+      }
+      .clicktosee:hover {
+        color: #222;
+      }
+      .css_def {
+        width: 100%;
+        padding: 10px;
+        display:none;
+      }
+      .css_def .code {
+        font-family: monospace;
+        padding: 10px;
+      }
+      .shown {
+        display: inline-block;
+      }
     </style>
   </head>
   <body>
     <header>
-      <h1>Pattern Library: CSS Examples</h1>
+      <h1>Pattern Fills: CSS Examples</h1>
       <p>The following patterns are available as class names in the
         <a href="patterns.css"><code>patterns.css</code></a> file. Here's what a classname might look like:</p>
+      <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=svg_pattern_use.html"></script>
+
+      <p> You can download the entire css patterns file <a href="patterns.css">here</a>.</p>
       <p>
-        <pre>
-          <code>
-            .circles-1 {
-              background-image: url(&quot;data:image/svg+xml,&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&gt;&lt;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&gt;&lt;circle cx=&#39;1&#39; cy=&#39;1&#39; r=&#39;1&#39;/&gt;&lt;/svg&gt;&quot;);
-              background-repeat: repeat;
-            }
-          </code>
-        </pre>
+        If you don't want to download the full file above, click any of the patterns to see the class definition and to copy it for your css files.
       </p>
     </header>
     <div id="samples">
         <%= samples %>
     </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.2.min.js"></script>
+    <script type="text/javascript">
 
+      $('body').on('click', '.clicktosee', function(ev) {
+        console.log($(this).parent().find('.css_def'));
+        $(this).parent().find('.css_def').toggleClass('shown');
+      });
+
+    </script>
   </body>
 </html>

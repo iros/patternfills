@@ -18,6 +18,7 @@
         background-color: #eaeaea;
         border: 1px solid #ddd;
         margin-left:1%;
+        cursor: pointer;
       }
       .pattern-swatch {
         border: 1px solid #aaa;
@@ -26,13 +27,41 @@
         float:left;
         padding: 10px;
       }
+      .clicktosee {
+        display: inline-block;
+        color: steelblue;
+        cursor: pointer;
+        padding: 5px;
+        margin-top: 5px;
+        font-size: 0.8em;
+      }
+      .clicktosee:hover {
+        color: #222;
+      }
+      .svg_def {
+        width: 100%;
+        padding: 10px;
+        display:none;
+      }
+      .svg_def .code {
+        font-family: monospace;
+        padding: 10px;
+      }
+      .shown {
+        display: inline-block;
+      }
     </style>
-
   </head>
   <body>
     <header>
-      <h1>Pattern Library: SVG Examples</h1>
-      <p>The following patterns are all defined as SVG patterns. You can inspect the source to see them and how they are used.</p>
+      <h1>Pattern Fills: SVG Examples</h1>
+      <p>The following patterns are all defined as SVG patterns. Click on any pattern to see and copy the SVG pattern used into your html.</p>
+
+      <p>
+        An svg pattern would be used like so:
+        <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=svg_pattern_use.html"></script>
+      </p>
+
     </header>
     <div id="patterns" style="height:0;">
         <%= patterns %>
@@ -41,6 +70,15 @@
     <div id="samples">
         <%= samples %>
     </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.2.min.js"></script>
+    <script type="text/javascript">
+
+      $('body').on('click', '.clicktosee', function(ev) {
+        console.log($(this).parent().find('.svg_def'));
+        $(this).parent().find('.svg_def').toggleClass('shown');
+      });
+
+    </script>
 
   </body>
 </html>

@@ -12,15 +12,26 @@
         margin: 0 auto;
         padding: 50px;
       }
+
+      .info {
+        background-color: #eee;
+        padding: 10px;
+        font-family: monospace;
+      }
     </style>
   </head>
   <body>
     <header>
       <h1>Pattern Fills</h1>
+      <div class="info">
+        Github: <a href="http://github.com/iros/patternfills">
+          http://github.com/iros/patternfills
+        </a>
+      </div>
     </header>
 
     <p>
-      There are many ways to fill the background of a DOM or SVG element, including using solid colors or gradients. If you want to use a repeating pattern of some kind, the easiest way to do so is to create an SVG document that defines it and use it as a pattern fill.
+      There are many ways to fill the background of a DOM or SVG element, including using solid colors or gradients. If you want to use a repeating pattern of some kind, the easiest way to do so is to create an SVG document that defines it and use it as a pattern fill. SVG images are typically smaller than bitmap images and remain sharp on high-dpi screens. Unlike CSS3 gradients, SVG images are supported on IE9. (source: http://philbit.com/svgpatterns/#whysvg)
     </p>
 
     <p>
@@ -32,6 +43,70 @@
         <li><a href="sample_d3.html">Using d3 (which is effectively svg fills)</a></li>
       </ul>
     </p>
+
+    <h2>How do SVG Patterns Work?</h2>
+
+    <p>First an svg pattern needs to be defined. For example
+      this pattern generates small circles, each of radius 1px and
+      positions them at coordinates <code>1,1</code> like so:
+
+      <br>
+      <svg style="padding:10px;" height="100" width="100" class="pattern-swatch">
+        <rect style="fill: url(#circles-1) #fff;" x="0" y="0" height="100" width="100">
+
+      </rect></svg>
+
+    <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=pattern.svg"></script>
+
+    <p>
+      This pattern then needs to be compiled. There are two ways generate a compiled version:
+    </p>
+
+    <h3>1. SVG Pattern Definition:</h3>
+
+    To define a pattern that can then be used in svg, one must add it to the defs section of an svg container. Note that the SVG pattern we defined above gets translated into a string.
+    <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=pattern_def_sample.html"></script>
+
+    <p>
+      This allows us to use the pattern like so:
+      <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=svg_pattern_use.html"></script>
+    </p>
+
+
+    <h3>2. CSS Background Image Url</h3>
+
+    To define a pattern that can be used with a classname, one must define a classname where the pattern string is used as the `background-image` url. For example:
+
+    <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=pattern.css"></script>
+
+    <p>
+      This allows us to use the pattern like so:
+      <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=svg_pattern_use.html"></script>
+    </p>
+
+    <h3>What does this library do:</h3>
+
+    <p>
+      Patternfills offers several premade patterns that can be used already.
+      You can see them in class name form in <code>public/patterns.css</code>.
+    </p>
+    <p>
+      For the SVG form of the patterns, you should look at <code>public/sample_svg.html</code> to view the actual compiled pattern svg definitions.
+    </p>
+
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <pattern id="circles-1" patternUnits="userSpaceOnUse" width="10" height="10">
+          <image xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><circle cx='1' cy='1' r='1'/></svg>"
+            x="0"
+            y="0"
+            width="10"
+            height="10">
+          </image>
+        </pattern>
+      </defs>
+    </svg>
 
   </body>
 </html>

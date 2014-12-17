@@ -1,6 +1,7 @@
 /* global require,console */
 
 var _ = require("underscore");
+var ent = require('ent');
 var fs = require("fs");
 var SVGO = require("svgo");
 var svgo = new SVGO({
@@ -43,7 +44,7 @@ var templates = {
 };
 
 var outputStrings = {
-  svg: [],
+  svg: [], escapedSVG: [],
   css: [],
   svgSamples: [],
   divSamples: [],
@@ -72,8 +73,12 @@ patterns.forEach(function(patternFile, patternIndex) {
 
     // pattern defs
     outputStrings.svg[patternIndex] = templates.pattern.svg(data);
+    data.escapedSVG = ent.encode(outputStrings.svg[patternIndex]);
+
     // pattern css file
     outputStrings.css[patternIndex] = templates.pattern.css(data);
+    data.cssClass = ent.encode(outputStrings.css[patternIndex]);
+
     // svg pattern using rects
     outputStrings.svgSamples[patternIndex] = templates.components.rect(data);
     // css pattern using divs

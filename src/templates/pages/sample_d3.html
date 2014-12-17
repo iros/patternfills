@@ -27,13 +27,36 @@
         float:left;
         padding: 10px;
       }
+      .clicktosee {
+        display: inline-block;
+        color: steelblue;
+        cursor: pointer;
+        padding: 5px;
+        margin-top: 5px;
+        font-size: 0.8em;
+      }
+      .clicktosee:hover {
+        color: #222;
+      }
+      .svg_def {
+        width: 100%;
+        padding: 10px;
+        display:none;
+      }
+      .svg_def .code {
+        font-family: monospace;
+        padding: 10px;
+      }
+      .shown {
+        display: inline-block;
+      }
     </style>
 
   </head>
   <body>
      <header>
-      <h1>Pattern Library: D3 Examples</h1>
-      <p>The following examples are all created with d3 and use svg patterns. You can examine the source to see the pattern defs, and the d3 code that uses them. For reference, here's a relevant snippet:</p>
+      <h1>Pattern Fills: D3 Examples</h1>
+      <p>The following examples are all created with d3 and use svg patterns. Click on any of the examples to see the svg pattern definitions and copy them into your html. For reference, here's how you might use them with d3:</p>
       <p>
         <pre>
         <code>
@@ -54,10 +77,18 @@
 
     <div id="samples">
     </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.2.min.js"></script>
+    <script type="text/javascript">
 
+      $('body').on('click', '.clicktosee', function(ev) {
+        console.log($(this).parent().find('.svg_def'));
+        $(this).parent().find('.svg_def').toggleClass('shown');
+      });
+
+    </script>
     <script>
       var container = d3.select("#samples");
-      function makeRect(name) {
+      function makeRect(name, escapedSVG) {
         var row = container.append("div")
           .classed("svg_pattern", true);
 
@@ -77,6 +108,16 @@
           .html(function() {
             return "Fill url name: <br /><br /><strong>#" + name + "</strong>";
           });
+
+        row.append("div")
+          .classed('clicktosee', true)
+          .text("Click here to see pattern definition");
+
+        row.append("div")
+          .classed("svg_def", true)
+          .append("div")
+            .classed("code", true)
+            .html(escapedSVG);
       }
 
       <%= d3Script %>
