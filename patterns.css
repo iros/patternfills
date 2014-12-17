@@ -26,7 +26,7 @@
   background-repeat: repeat;
 }
 .circles-5 {
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><circle cx='5' cy='5' r='5'/></svg>");
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><circle cx='3' cy='3' r='3'/></svg>");
   background-repeat: repeat;
 }
 .circles-6 {

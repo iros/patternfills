@@ -26,22 +26,41 @@
         float:left;
         padding: 10px;
       }
+      .clicktosee {
+        display: inline-block;
+        color: steelblue;
+        cursor: pointer;
+        padding: 5px;
+        margin-top: 5px;
+        font-size: 0.8em;
+      }
+      .clicktosee:hover {
+        color: #222;
+      }
+      .css_def {
+        width: 100%;
+        padding: 10px;
+        display:none;
+      }
+      .css_def .code {
+        font-family: monospace;
+        padding: 10px;
+      }
+      .shown {
+        display: inline-block;
+      }
     </style>
   </head>
   <body>
     <header>
-      <h1>Pattern Library: CSS Examples</h1>
+      <h1>Pattern Fills: CSS Examples</h1>
       <p>The following patterns are available as class names in the
         <a href="patterns.css"><code>patterns.css</code></a> file. Here's what a classname might look like:</p>
+      <script src="https://gist.github.com/iros/d49c0fc8b870059a3c2b.js?file=svg_pattern_use.html"></script>
+
+      <p> You can download the entire css patterns file <a href="patterns.css">here</a>.</p>
       <p>
-        <pre>
-          <code>
-            .circles-1 {
-              background-image: url(&quot;data:image/svg+xml,&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&gt;&lt;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&gt;&lt;circle cx=&#39;1&#39; cy=&#39;1&#39; r=&#39;1&#39;/&gt;&lt;/svg&gt;&quot;);
-              background-repeat: repeat;
-            }
-          </code>
-        </pre>
+        If you don't want to download the full file above, click any of the patterns to see the class definition and to copy it for your css files.
       </p>
     </header>
     <div id="samples">
@@ -51,11 +70,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.circles-1</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .circles-1 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;circle cx=&#39;1&#39; cy=&#39;1&#39; r=&#39;1&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch circles-2">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.circles-2</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .circles-2 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;circle cx=&#39;1.5&#39; cy=&#39;1.5&#39; r=&#39;1.5&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch circles-3">
@@ -63,11 +100,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.circles-3</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .circles-3 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;circle cx=&#39;2&#39; cy=&#39;2&#39; r=&#39;2&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch circles-4">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.circles-4</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .circles-4 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;circle cx=&#39;2.5&#39; cy=&#39;2.5&#39; r=&#39;2.5&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch circles-5">
@@ -75,11 +130,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.circles-5</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .circles-5 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;circle cx=&#39;3&#39; cy=&#39;3&#39; r=&#39;3&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch circles-6">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.circles-6</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .circles-6 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;circle cx=&#39;3.5&#39; cy=&#39;3.5&#39; r=&#39;3.5&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch circles-7">
@@ -87,11 +160,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.circles-7</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .circles-7 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;circle cx=&#39;4&#39; cy=&#39;4&#39; r=&#39;4&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch circles-8">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.circles-8</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .circles-8 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;circle cx=&#39;4.5&#39; cy=&#39;4.5&#39; r=&#39;4.5&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch circles-9">
@@ -99,11 +190,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.circles-9</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .circles-9 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;circle cx=&#39;5&#39; cy=&#39;5&#39; r=&#39;5&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch crosshatch">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.crosshatch</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .crosshatch {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;8&#39; height=&#39;8&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h8v8h-8z&#39;/&#62;&#60;path d=&#39;M0 0l8 8zm8 0l-8 8z&#39; stroke-width=&#39;.5&#39; stroke=&#39;#aaa&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch diagonal-stripe-1">
@@ -111,11 +220,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.diagonal-stripe-1</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .diagonal-stripe-1 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#FFF&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M-1 1l2-2m-1 11l10-10m-1 11l2-2&#39; stroke=&#39;#000&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch diagonal-stripe-2">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.diagonal-stripe-2</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .diagonal-stripe-2 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#FFF&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M-1 1l2-2m-1 11l10-10m-1 11l2-2&#39; stroke=&#39;#000&#39; stroke-width=&#39;2&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch diagonal-stripe-3">
@@ -123,11 +250,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.diagonal-stripe-3</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .diagonal-stripe-3 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#FFF&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M-1 1l2-2m-1 11l10-10m-1 11l2-2&#39; stroke=&#39;#000&#39; stroke-width=&#39;3&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch diagonal-stripe-4">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.diagonal-stripe-4</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .diagonal-stripe-4 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M-1 1l2-2m-1 11l10-10m-1 11l2-2&#39; stroke=&#39;#fff&#39; stroke-width=&#39;3&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch diagonal-stripe-5">
@@ -135,11 +280,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.diagonal-stripe-5</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .diagonal-stripe-5 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M-1 1l2-2m-1 11l10-10m-1 11l2-2&#39; stroke=&#39;#fff&#39; stroke-width=&#39;2&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch diagonal-stripe-6">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.diagonal-stripe-6</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .diagonal-stripe-6 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M-1 1l2-2m-1 11l10-10m-1 11l2-2&#39; stroke=&#39;#fff&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch dots-1">
@@ -147,11 +310,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.dots-1</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .dots-1 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h1v1h-1z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch dots-2">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.dots-2</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .dots-2 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h2v2h-2z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch dots-3">
@@ -159,11 +340,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.dots-3</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .dots-3 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h3v3h-3z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch dots-4">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.dots-4</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .dots-4 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h4v4h-4z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch dots-5">
@@ -171,11 +370,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.dots-5</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .dots-5 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h5v5h-5z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch dots-6">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.dots-6</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .dots-6 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h6v6h-6z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch dots-7">
@@ -183,11 +400,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.dots-7</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .dots-7 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h7v7h-7z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch dots-8">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.dots-8</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .dots-8 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h8v8h-8z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch dots-9">
@@ -195,11 +430,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.dots-9</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .dots-9 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h9v9h-9z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch horizontal-stripe-1">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.horizontal-stripe-1</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .horizontal-stripe-1 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h10v1h-10z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch horizontal-stripe-2">
@@ -207,11 +460,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.horizontal-stripe-2</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .horizontal-stripe-2 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h10v2h-10z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch horizontal-stripe-3">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.horizontal-stripe-3</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .horizontal-stripe-3 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h10v3h-10z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch horizontal-stripe-4">
@@ -219,11 +490,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.horizontal-stripe-4</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .horizontal-stripe-4 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h10v4h-10z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch horizontal-stripe-5">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.horizontal-stripe-5</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .horizontal-stripe-5 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h10v5h-10z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch horizontal-stripe-6">
@@ -231,11 +520,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.horizontal-stripe-6</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .horizontal-stripe-6 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h10v6h-10z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch horizontal-stripe-7">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.horizontal-stripe-7</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .horizontal-stripe-7 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h10v7h-10z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch horizontal-stripe-8">
@@ -243,11 +550,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.horizontal-stripe-8</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .horizontal-stripe-8 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h10v8h-10z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch horizontal-stripe-9">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.horizontal-stripe-9</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .horizontal-stripe-9 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h10v9h-10z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch houndstooth">
@@ -255,11 +580,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.houndstooth</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .houndstooth {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg width=&#39;10&#39; height=&#39;10&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39;&#62;&#60;path d=&#39;M0 0l4 4M2.5 0l2.5 2.5v2.5l4 4-4-4h5v-5M5 10v-2.5l2.5 2.5&#39; stroke=&#39;#aaa&#39; fill=&#39;#aaa&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch lightstripe">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.lightstripe</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .lightstripe {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;5&#39; height=&#39;5&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h5v5h-5z&#39;/&#62;&#60;path d=&#39;M0 5l5-5zm6-1l-2 2zm-7-3l2-2z&#39; stroke=&#39;#888&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch smalldot">
@@ -267,11 +610,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.smalldot</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .smalldot {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;5&#39; height=&#39;5&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h5v5h-5z&#39;/&#62;&#60;path fill=&#39;#ccc&#39; d=&#39;M0 0h1v1h-1z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch vertical-stripe-1">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.vertical-stripe-1</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .vertical-stripe-1 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h1v10h-1z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch vertical-stripe-2">
@@ -279,11 +640,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.vertical-stripe-2</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .vertical-stripe-2 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h2v10h-2z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch vertical-stripe-3">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.vertical-stripe-3</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .vertical-stripe-3 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h3v10h-3z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch vertical-stripe-4">
@@ -291,11 +670,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.vertical-stripe-4</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .vertical-stripe-4 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h4v10h-4z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch vertical-stripe-5">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.vertical-stripe-5</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .vertical-stripe-5 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h5v10h-5z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch vertical-stripe-6">
@@ -303,11 +700,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.vertical-stripe-6</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .vertical-stripe-6 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h6v10h-6z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch vertical-stripe-7">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.vertical-stripe-7</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .vertical-stripe-7 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h7v10h-7z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch vertical-stripe-8">
@@ -315,11 +730,29 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.vertical-stripe-8</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .vertical-stripe-8 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h8v10h-8z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch vertical-stripe-9">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.vertical-stripe-9</strong>
+  </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .vertical-stripe-9 {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;10&#39; height=&#39;10&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h10v10h-10z&#39;/&#62;&#60;path d=&#39;M0 0h9v10h-9z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
   </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch verticalstripe">
@@ -327,14 +760,40 @@
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.verticalstripe</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .verticalstripe {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;6&#39; height=&#39;49&#39;&#62;&#60;path fill=&#39;#fff&#39; d=&#39;M0 0h3v50h-3z&#39;/&#62;&#60;path fill=&#39;#ccc&#39; d=&#39;M3 0h1v50h-1z&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div><div class="css_pattern">
   <div style="width: 100px; height: 100px; float:left" class="pattern-swatch whitecarbon">
   </div>
   <div class="pattern_name">
     Pattern Class Name: <br /><br /><strong>.whitecarbon</strong>
   </div>
+  <div class="clicktosee">
+    Click here to see css class definition
+  </div>
+  <div class="css_def">
+    Copy the following into your css definition:
+    <div class="code">
+      .whitecarbon {&#10;  background-image: url(&#34;data:image/svg+xml,&#60;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; xmlns:xlink=&#39;http://www.w3.org/1999/xlink&#39; width=&#39;6&#39; height=&#39;6&#39;&#62;&#60;path fill=&#39;#eee&#39; d=&#39;M0 0h6v6h-6z&#39;/&#62;&#60;g id=&#39;a&#39;&#62;&#60;path fill=&#39;#e6e6e6&#39; d=&#39;M0 0h3v3h-3z&#39;/&#62;&#60;path fill=&#39;#d8d8d8&#39; d=&#39;M0 1h3v2h-3z&#39;/&#62;&#60;/g&#62;&#60;use xlink:href=&#39;#a&#39; x=&#39;3&#39; y=&#39;3&#39;/&#62;&#60;/svg&#62;&#34;);&#10;  background-repeat: repeat;&#10;}&#10;
+    </div>
+  </div>
 </div>
     </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.2.min.js"></script>
+    <script type="text/javascript">
 
+      $('body').on('click', '.clicktosee', function(ev) {
+        console.log($(this).parent().find('.css_def'));
+        $(this).parent().find('.css_def').toggleClass('shown');
+      });
+
+    </script>
   </body>
 </html>
