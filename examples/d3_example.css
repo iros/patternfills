@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'underwood_championregular';
+    src: url('underwood_champion-webfont.eot');
+    src: url('underwood_champion-webfont.eot?#iefix') format('embedded-opentype'),
+         url('underwood_champion-webfont.woff') format('woff'),
+         url('underwood_champion-webfont.ttf') format('truetype'),
+         url('underwood_champion-webfont.svg#underwood_championregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.papereffect {
+  box-shadow: inset 0 0 90px #594819;
+}
+body {
+  font-family: 'underwood_championregular', monospace;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color:#b7b099;
+
+}
+.info {
+  background-color: #eee;
+  padding: 10px;
+  font-family: monospace;
+}
+
+#chart {
+  font-family: 'Patrick Hand SC', cursive;
+}
+#chart td, #chart th {
+  width: 50px;
+  word-break: break-all;
+}
+#chart table {
+  border-collapse: collapse;
+}
+#chart td, #chart th {
+  width: 50px;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto;
+}
+
+/*  header */
+#chart .header:nth-child(1), #chart .header:nth-child(2) {
+  border: none;
+}
+#chart th:nth-child(1), #chart tr td:nth-child(1) {
+  width: 10px;
+  word-break:normal;
+}
+#chart th:nth-child(2), #chart tr td:nth-child(2) {
+  width: 100px;
+  word-break:normal;
+}
+#chart .header {
+  border: 1px solid black;
+  padding: 5px;
+  line-height: 0.7;
+  font-size: 0.8em;
+  border-bottom: 6px double black;
+}
+
+/* data */
+#chart td.datapoint {
+  padding: 0px;
+  padding-right: 2px;
+  padding-left: 2px;
+  border-bottom: 5px double black;
+
+}
+#chart td.name {
+  word-break: none;
+  font-weight: 800;
+}
+#chart tr.state td:nth-child(3) {
+  padding-left: 0px;
+}
+#chart tr.state td:nth-child(12) {
+  padding-right: 0px;
+}
+
+#chart td.datapoint div {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+/* background fills */
+.white {
+  background-color: white;
+}
+.black {
+  background-color: black;
+}
+
+footer {
+  margin-top: 50px;
+  font-family: 'underwood_championregular', monospace;
+}
