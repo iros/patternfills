@@ -1,0 +1,48 @@
+State,Children in School,School Plant,Expense Per Child,School days per child,School Year,Attendance,Expenditure and Wealth,Daily Cost,High Schools,Salaries
+Washington,0,0,0,0,0,1,0,0,0,0
+Massachusetts,0,0,0,0,0,0,1,1,0,0
+New York,1,0,0,0,0,0,2,1,0,0
+California,2,0,0,1,0,0,1,0,0,0
+Connecticut,0,0,0,0,0,0,1,2,1,0
+Ohio,0,0,0,0,1,1,1,1,0,1
+New Jersey,2,0,0,0,0,1,0,1,1,0
+Illinois,1,0,0,0,1,0,2,1,1,0
+Colorado,0,0,0,1,1,3,1,0,1,0
+Indiana,1,0,1,1,2,0,0,1,0,1
+Rhode Island,1,0,1,0,0,1,3,2,0,0
+Vermont,0,1,1,0,1,0,0,1,1,3
+New Hampshire,0,0,1,1,1,0,2,1,0,2
+Utah,1,1,1,1,1,1,0,1,2,0
+Oregon,3,1,1,1,2,0,0,0,0,1
+Montana,0,1,0,1,0,3,3,0,1,0
+Michigan,2,1,2,0,1,0,1,2,1,1
+North Dakota,0,1,0,2,2,2,0,0,2,2
+Minnesota,2,1,1,1,2,0,2,0,1,1
+Iowa,0,1,1,0,1,1,3,1,0,3
+Maine,0,1,2,0,1,1,1,2,0,3
+Pennsylvania,2,1,2,1,1,0,3,1,1,1
+Kansas,1,2,2,1,1,1,0,2,1,2
+Nebraska,1,1,2,1,0,2,2,1,1,2
+South Dakota,2,2,1,2,1,3,0,0,1,2
+Nevada,3,2,0,3,2,1,3,0,0,1
+Wisconsin,2,2,2,1,0,2,2,2,1,1
+Wyoming,1,2,1,2,2,2,3,0,2,1
+Arizona,1,2,1,2,3,3,3,0,2,0
+Oklahoma,1,2,2,2,2,2,0,2,3,2
+Missouri,2,2,2,2,2,2,2,2,2,1
+West Virginia,2,2,2,2,3,2,0,2,3,2
+Florida,1,3,2,2,3,1,1,2,3,3
+Delaware,3,2,2,2,0,3,3,3,2,2
+Maryland,3,3,2,2,0,3,3,3,1,1
+Tennessee,1,3,3,2,3,1,1,3,3,3
+Texas,3,2,3,3,3,2,1,3,2,2
+Louisiana,3,3,3,3,2,2,1,2,3,2
+New Mexico,3,2,3,3,3,2,3,2,2,2
+Virgina,3,3,3,3,2,2,2,3,2,3
+Kentucky,3,3,3,3,3,3,1,3,3,2
+Arkansas,2,3,3,3,3,3,2,3,3,3
+Georgia,3,3,3,3,2,3,2,3,3,3
+Mississippi,2,3,3,3,3,3,2,3,3,3
+North Carolina,2,3,3,3,3,3,2,3,3,3
+South Carolina,3,3,3,3,3,1,3,3,3,3
+Alabama,3,3,3,3,3,3,3,3,3,3

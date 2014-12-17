@@ -7,6 +7,10 @@ module.exports = function(grunt) {
     patterns: {
       files: ['src/**/*'],
       tasks: ['render']
+    },
+    examples: {
+      files: ['examples/**/*'],
+      tasks: ['copy']
     }
   });
 
