@@ -9,6 +9,8 @@
   Licensed under the MIT License.
 */
 
+
+/* Group: 1-circles */
 .circles-1 {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><circle cx='1' cy='1' r='1'/></svg>");
   background-repeat: repeat;
@@ -45,10 +47,9 @@
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><circle cx='5' cy='5' r='5'/></svg>");
   background-repeat: repeat;
 }
-.crosshatch {
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='#fff' d='M0 0h8v8h-8z'/><path d='M0 0l8 8zm8 0l-8 8z' stroke-width='.5' stroke='#aaa'/></svg>");
-  background-repeat: repeat;
-}
+
+
+/* Group: 2-diagonal-stripe */
 .diagonal-stripe-1 {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#FFF' d='M0 0h10v10h-10z'/><path d='M-1 1l2-2m-1 11l10-10m-1 11l2-2' stroke='#000'/></svg>");
   background-repeat: repeat;
@@ -73,6 +74,9 @@
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path d='M0 0h10v10h-10z'/><path d='M-1 1l2-2m-1 11l10-10m-1 11l2-2' stroke='#fff'/></svg>");
   background-repeat: repeat;
 }
+
+
+/* Group: 3-dots */
 .dots-1 {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><path d='M0 0h1v1h-1z'/></svg>");
   background-repeat: repeat;
@@ -109,6 +113,9 @@
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><path d='M0 0h9v9h-9z'/></svg>");
   background-repeat: repeat;
 }
+
+
+/* Group: 4-horizontal-stripe */
 .horizontal-stripe-1 {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><path d='M0 0h10v1h-10z'/></svg>");
   background-repeat: repeat;
@@ -145,18 +152,9 @@
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><path d='M0 0h10v9h-10z'/></svg>");
   background-repeat: repeat;
 }
-.houndstooth {
-  background-image: url("data:image/svg+xml,<svg width='10' height='10' xmlns='http://www.w3.org/2000/svg'><path d='M0 0l4 4M2.5 0l2.5 2.5v2.5l4 4-4-4h5v-5M5 10v-2.5l2.5 2.5' stroke='#aaa' fill='#aaa'/></svg>");
-  background-repeat: repeat;
-}
-.lightstripe {
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='5'><path fill='#fff' d='M0 0h5v5h-5z'/><path d='M0 5l5-5zm6-1l-2 2zm-7-3l2-2z' stroke='#888'/></svg>");
-  background-repeat: repeat;
-}
-.smalldot {
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='5'><path fill='#fff' d='M0 0h5v5h-5z'/><path fill='#ccc' d='M0 0h1v1h-1z'/></svg>");
-  background-repeat: repeat;
-}
+
+
+/* Group: 5-vertical-stripe */
 .vertical-stripe-1 {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><path d='M0 0h1v10h-1z'/></svg>");
   background-repeat: repeat;
@@ -193,6 +191,25 @@
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><path d='M0 0h9v10h-9z'/></svg>");
   background-repeat: repeat;
 }
+
+
+/* Group: 6-other */
+.crosshatch {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='#fff' d='M0 0h8v8h-8z'/><path d='M0 0l8 8zm8 0l-8 8z' stroke-width='.5' stroke='#aaa'/></svg>");
+  background-repeat: repeat;
+}
+.houndstooth {
+  background-image: url("data:image/svg+xml,<svg width='10' height='10' xmlns='http://www.w3.org/2000/svg'><path d='M0 0l4 4M2.5 0l2.5 2.5v2.5l4 4-4-4h5v-5M5 10v-2.5l2.5 2.5' stroke='#aaa' fill='#aaa'/></svg>");
+  background-repeat: repeat;
+}
+.lightstripe {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='5'><path fill='#fff' d='M0 0h5v5h-5z'/><path d='M0 5l5-5zm6-1l-2 2zm-7-3l2-2z' stroke='#888'/></svg>");
+  background-repeat: repeat;
+}
+.smalldot {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='5' height='5'><path fill='#fff' d='M0 0h5v5h-5z'/><path fill='#ccc' d='M0 0h1v1h-1z'/></svg>");
+  background-repeat: repeat;
+}
 .verticalstripe {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='49'><path fill='#fff' d='M0 0h3v50h-3z'/><path fill='#ccc' d='M3 0h1v50h-1z'/></svg>");
   background-repeat: repeat;
@@ -201,3 +218,5 @@
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='6' height='6'><path fill='#eee' d='M0 0h6v6h-6z'/><g id='a'><path fill='#e6e6e6' d='M0 0h3v3h-3z'/><path fill='#d8d8d8' d='M0 1h3v2h-3z'/></g><use xlink:href='#a' x='3' y='3'/></svg>");
   background-repeat: repeat;
 }
+
+
