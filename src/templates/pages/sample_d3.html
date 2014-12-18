@@ -74,7 +74,9 @@ selection.append("rect")
     </header>
 
     <div id="patterns" style="height:0;">
-        <%= patterns %>
+      <% for (var i = 0; i < groups.length; i++) { %>
+        <%= groups[i].svg %>
+      <% } %>
     </div>
 
     <div id="samples">
@@ -121,8 +123,12 @@ selection.append("rect")
             .classed("code", true)
             .html(escapedSVG);
       }
+      <% for (var i = 0; i < groups.length; i++) { %>
+        container.append("h2")
+          .text('Group: <%= groups[i].groupName %>');
 
-      <%= d3Script %>
+        <%= groups[i].d3Samples %>
+      <% } %>
     </script>
   </body>
 </html>

@@ -66,11 +66,16 @@
 
     </header>
     <div id="patterns" style="height:0;">
-        <%= patterns %>
+      <% for (var i = 0; i < groups.length; i++) { %>
+        <%= groups[i].svg %>
+      <% } %>
     </div>
 
     <div id="samples">
-        <%= samples %>
+      <% for (var i = 0; i < groups.length; i++) { %>
+        <h2>Group: <%= groups[i].groupName %></h2>
+        <%= groups[i].svgSamples %>
+      <% } %>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.2.min.js"></script>
     <script type="text/javascript">

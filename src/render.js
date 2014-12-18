@@ -16,10 +16,6 @@ function templifyPath(url) {
   return _.template(fs.readFileSync(url,{ encoding: "utf-8" }));
 }
 
-// pattern names. all files must be called patternName.svg in the patterns
-// directory under src.
-var patterns = fs.readdirSync("./src/patterns");
-
 // various templates for assembling sample files.
 var templates = {
 
@@ -43,78 +39,118 @@ var templates = {
   }
 };
 
-var outputStrings = {
-  svg: [], escapedSVG: [],
-  css: [],
-  svgSamples: [],
-  divSamples: [],
-  div: [],
-  d3Samples: []
-};
+var root = "./src/patterns/";
+var patternGroups = fs.readdirSync(root);
+var processingCount = patternGroups.length - 1; //-.DS_Store
 
-var processingCount = patterns.length;
+// groups of patterns.
+var groups = [];
 
-patterns.forEach(function(patternFile, patternIndex) {
-  var patternFilePath = "./src/patterns/" + patternFile;
-  var patternName = /(.*).svg/.exec(patternFile)[1];
+patternGroups.forEach(function(patternGroupName, groupIndex) {
 
-  console.log("Processing " + patternName);
+  if (patternGroupName !== ".DS_Store" &&
+    fs.lstatSync(root + patternGroupName).isDirectory()) {
 
-  var pattern = fs.readFileSync(patternFilePath, { encoding: "utf-8" });
-
-  svgo.optimize(pattern, function(optimized) {
-    // build template data
-    var data = {
-      height: optimized.info.height,
-      width: optimized.info.width,
-      name: patternName,
-      imagedata: "data:image/svg+xml," + optimized.data
+    var outputStrings = {
+      groupName: patternGroupName,
+      svg: [],
+      escapedSVG: [],
+      css: [],
+      svgSamples: [],
+      divSamples: [],
+      div: [],
+      d3Samples: []
     };
 
-    // pattern defs
-    outputStrings.svg[patternIndex] = templates.pattern.svg(data);
-    data.escapedSVG = ent.encode(outputStrings.svg[patternIndex]);
+    var patternGroup = fs.readdirSync(root + patternGroupName);
+    patternGroup.forEach(function(patternFile, patternIndex) {
 
-    // pattern css file
-    outputStrings.css[patternIndex] = templates.pattern.css(data);
-    data.cssClass = ent.encode(outputStrings.css[patternIndex]);
+      var patternFilePath = root + patternGroupName + "/" + patternFile;
+      var patternName = /(.*).svg/.exec(patternFile)[1];
 
-    // svg pattern using rects
-    outputStrings.svgSamples[patternIndex] = templates.components.rect(data);
-    // css pattern using divs
-    outputStrings.divSamples[patternIndex] = templates.components.div(data);
-    // d3 code pattern samples
-    outputStrings.d3Samples[patternIndex] = templates.components.d3Snippet(data);
-    finish();
-  });
-});
+      var pattern = fs.readFileSync(patternFilePath, { encoding: "utf-8" });
 
-function finish() {
-  if (!--processingCount) {
-    _.each(outputStrings, function(value, key) {
-      outputStrings[key] = value.join("");
+      console.log("Processing " + patternGroupName + ":" + patternName);
+
+      svgo.optimize(pattern, function(optimized) {
+        // build template data
+        var data = {
+          height: optimized.info.height,
+          width: optimized.info.width,
+          name: patternName,
+          imagedata: "data:image/svg+xml," + optimized.data
+        };
+
+        // pattern defs
+        outputStrings.svg[patternIndex] = templates.pattern.svg(data);
+        data.escapedSVG = ent.encode(outputStrings.svg[patternIndex]);
+
+        // pattern css file
+        outputStrings.css[patternIndex] = templates.pattern.css(data);
+        data.cssClass = ent.encode(outputStrings.css[patternIndex]);
+
+        // svg pattern using rects
+        outputStrings.svgSamples[patternIndex] = templates.components.rect(data);
+        // css pattern using divs
+        outputStrings.divSamples[patternIndex] = templates.components.div(data);
+        // d3 code pattern samples
+        outputStrings.d3Samples[patternIndex] = templates.components.d3Snippet(data);
+
+        if (patternIndex + 1 === patternGroup.length) {
+          groups.push(outputStrings);
+          finish();
+        }
+      });
+
+
     });
 
+  } else {
+
+  }
+
+
+});
+
+
+function writeOutFile(path, contents) {
+  fs.writeFileSync(path, contents, {encoding: "utf-8"});
+}
+
+function finish() {
+
+  if (!--processingCount) {
+
+
+    for ( var i = 0; i < groups.length; i++) {
+
+      console.log(groups[i].groupName);
+      _.each(groups[i], function(value, key) {
+        if (groups[i][key] instanceof Array) {
+          groups[i][key] = value.join("");
+        }
+      });
+    }
+
     console.log("Writing pattern.css");
+
     writeOutFile("./public/patterns.css", templates.output.patterns_css({
-      patterns: outputStrings.css
+      groups: groups
     }));
 
     console.log("Writing sample_css.html");
     writeOutFile("./public/sample_css.html", templates.output.css({
-      samples: outputStrings.divSamples
+      groups: groups // outputStrings.divSamples
     }));
 
     console.log("Writing sample_svg.html");
     writeOutFile("./public/sample_svg.html", templates.output.svg({
-      patterns: outputStrings.svg,
-      samples: outputStrings.svgSamples
+      groups: groups
     }));
 
     console.log("Writing sample_d3.html");
     writeOutFile("./public/sample_d3.html", templates.output.d3({
-      patterns: outputStrings.svg,
-      d3Script: outputStrings.d3Samples
+      groups: groups,
     }));
 
     console.log("Writing pattern.css");
@@ -122,8 +158,3 @@ function finish() {
 
   }
 }
-
-function writeOutFile(path, contents) {
-  fs.writeFileSync(path, contents, {encoding: "utf-8"});
-}
-

@@ -14,5 +14,5 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask("dev", ["connect", "watch"]);
-  grunt.registerTask("default", ["render"]);
+  grunt.registerTask("default", ["render", "copy"]);
 };
