@@ -10,7 +10,7 @@
 */
 
 
-/* Group: 1-circles */
+/* Group: circles */
 .circles-1 {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><circle cx='1' cy='1' r='1'/></svg>");
   background-repeat: repeat;
@@ -49,7 +49,7 @@
 }
 
 
-/* Group: 2-diagonal-stripe */
+/* Group: diagonal-stripe */
 .diagonal-stripe-1 {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#FFF' d='M0 0h10v10h-10z'/><path d='M-1 1l2-2m-1 11l10-10m-1 11l2-2' stroke='#000'/></svg>");
   background-repeat: repeat;
@@ -76,7 +76,7 @@
 }
 
 
-/* Group: 3-dots */
+/* Group: dots */
 .dots-1 {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><path d='M0 0h1v1h-1z'/></svg>");
   background-repeat: repeat;
@@ -115,7 +115,7 @@
 }
 
 
-/* Group: 4-horizontal-stripe */
+/* Group: horizontal-stripe */
 .horizontal-stripe-1 {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><path d='M0 0h10v1h-10z'/></svg>");
   background-repeat: repeat;
@@ -154,7 +154,7 @@
 }
 
 
-/* Group: 5-vertical-stripe */
+/* Group: vertical-stripe */
 .vertical-stripe-1 {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><path fill='#fff' d='M0 0h10v10h-10z'/><path d='M0 0h1v10h-1z'/></svg>");
   background-repeat: repeat;
@@ -193,7 +193,7 @@
 }
 
 
-/* Group: 6-other */
+/* Group: other */
 .crosshatch {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path fill='#fff' d='M0 0h8v8h-8z'/><path d='M0 0l8 8zm8 0l-8 8z' stroke-width='.5' stroke='#aaa'/></svg>");
   background-repeat: repeat;

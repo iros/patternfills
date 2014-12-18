@@ -98,7 +98,8 @@ body {
   background-color: black;
 }
 
-footer {
+.details {
+  width: 80%;
   margin-top: 50px;
   font-family: 'underwood_championregular', monospace;
 }
