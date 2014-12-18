@@ -45,6 +45,7 @@ var processingCount = patternGroups.length - 1; //-.DS_Store
 
 // groups of patterns.
 var groups = [];
+var patternNames = [];
 
 patternGroups.forEach(function(patternGroupName, groupIndex) {
 
@@ -52,7 +53,7 @@ patternGroups.forEach(function(patternGroupName, groupIndex) {
     fs.lstatSync(root + patternGroupName).isDirectory()) {
 
     var outputStrings = {
-      groupName: patternGroupName,
+      groupName: /([0-9]+\-)(.+)/.exec(patternGroupName)[2],
       svg: [],
       escapedSVG: [],
       css: [],
@@ -67,6 +68,7 @@ patternGroups.forEach(function(patternGroupName, groupIndex) {
 
       var patternFilePath = root + patternGroupName + "/" + patternFile;
       var patternName = /(.*).svg/.exec(patternFile)[1];
+      patternNames.push(patternName);
 
       var pattern = fs.readFileSync(patternFilePath, { encoding: "utf-8" });
 
@@ -123,8 +125,6 @@ function finish() {
 
 
     for ( var i = 0; i < groups.length; i++) {
-
-      console.log(groups[i].groupName);
       _.each(groups[i], function(value, key) {
         if (groups[i][key] instanceof Array) {
           groups[i][key] = value.join("");
@@ -133,7 +133,6 @@ function finish() {
     }
 
     console.log("Writing pattern.css");
-
     writeOutFile("./public/patterns.css", templates.output.patterns_css({
       groups: groups
     }));
@@ -154,7 +153,9 @@ function finish() {
     }));
 
     console.log("Writing pattern.css");
-    writeOutFile("./public/index.html", templates.output.index());
+    writeOutFile("./public/index.html", templates.output.index({
+      patterns: "\"" + patternNames.join("\",\"") + "\""
+    }));
 
   }
 }
