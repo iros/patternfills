@@ -1,16 +1,10 @@
 /* global require,console */
 
 var _ = require("underscore");
-var ent = require('ent');
+var ent = require("ent");
 var fs = require("fs");
-var SVGO = require("svgo");
-var svgo = new SVGO({
-  convertStyleToAttrs: true,
-  js2svg: {
-    attrStart: "='",
-    attrEnd: "'"
-  }
-});
+var btoa = require("btoa");
+var d3 = require("d3");
 
 function templifyPath(url) {
   return _.template(fs.readFileSync(url,{ encoding: "utf-8" }));
@@ -72,46 +66,45 @@ patternGroups.forEach(function(patternGroupName, groupIndex) {
 
       var pattern = fs.readFileSync(patternFilePath, { encoding: "utf-8" });
 
+      var b64 = btoa(pattern);
+      b64 = "data:image/svg+xml;base64," + b64;
+
       console.log("Processing " + patternGroupName + ":" + patternName);
 
-      svgo.optimize(pattern, function(optimized) {
-        // build template data
-        var data = {
-          height: optimized.info.height,
-          width: optimized.info.width,
-          name: patternName,
-          imagedata: "data:image/svg+xml," + optimized.data
-        };
+      // build template data
+      var mockNode = d3.select("body").html(pattern);
+      var height = mockNode.select("svg").attr("height");
+      var width = mockNode.select("svg").attr("width");
 
-        // pattern defs
-        outputStrings.svg[patternIndex] = templates.pattern.svg(data);
-        data.escapedSVG = ent.encode(outputStrings.svg[patternIndex]);
+      var data = {
+        height: height,
+        width: width,
+        name: patternName,
+        imagedata: b64
+      };
 
-        // pattern css file
-        outputStrings.css[patternIndex] = templates.pattern.css(data);
-        data.cssClass = ent.encode(outputStrings.css[patternIndex]);
+      // pattern defs
+      outputStrings.svg[patternIndex] = templates.pattern.svg(data);
+      data.escapedSVG = ent.encode(outputStrings.svg[patternIndex]);
 
-        // svg pattern using rects
-        outputStrings.svgSamples[patternIndex] = templates.components.rect(data);
-        // css pattern using divs
-        outputStrings.divSamples[patternIndex] = templates.components.div(data);
-        // d3 code pattern samples
-        outputStrings.d3Samples[patternIndex] = templates.components.d3Snippet(data);
+      // pattern css file
+      outputStrings.css[patternIndex] = templates.pattern.css(data);
+      data.cssClass = ent.encode(outputStrings.css[patternIndex]);
 
-        if (patternIndex + 1 === patternGroup.length) {
-          groups.push(outputStrings);
-          finish();
-        }
-      });
+      // svg pattern using rects
+      outputStrings.svgSamples[patternIndex] = templates.components.rect(data);
+      // css pattern using divs
+      outputStrings.divSamples[patternIndex] = templates.components.div(data);
+      // d3 code pattern samples
+      outputStrings.d3Samples[patternIndex] = templates.components.d3Snippet(data);
 
-
+      if (patternIndex + 1 === patternGroup.length) {
+        groups.push(outputStrings);
+        finish();
+      }
     });
 
-  } else {
-
   }
-
-
 });
 
 
