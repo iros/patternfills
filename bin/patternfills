@@ -3,7 +3,7 @@ var PatternBuilder = require('../src/pattern_builder.js');
 var program = require('commander');
 var fs = require('fs');
 program
-  .version('0.2.0')
+  .version('0.2.1')
   .usage('[options]')
   .option('-f, --format [value]', 'svg|css (required)')
   .option('-s, --source [value]', 'pattern/directory (optional. built in patterns used by default)')
