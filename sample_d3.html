@@ -492,7 +492,7 @@ selection.append("rect")
     </script>
     <script>
       var container = d3.select("#samples");
-      function makeRect(name, escapedSVG) {
+      function makeRect(name, encodedSVG) {
         var row = container.append("div")
           .classed("svg_pattern", true);
 
@@ -521,7 +521,7 @@ selection.append("rect")
           .classed("svg_def", true)
           .append("div")
             .classed("code", true)
-            .html(escapedSVG);
+            .html(encodedSVG);
       }
       
         container.append("h2")
