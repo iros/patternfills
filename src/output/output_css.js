@@ -53,14 +53,18 @@ var PatternsToCSS = function(patternData) {
 
 PatternsToCSS.prototype.writePages = function() {
   console.log("Writing pattern.css");
-  writeOutFile("patterns.css", templates.pages.patterns_css({
-    groups: this.patternData.groups
-  }));
+  writeOutFile("patterns.css", this.patternCss());
 
   console.log("Writing sample_css.html");
   writeOutFile("sample_css.html", templates.pages.css({
     groups: this.patternData.groups
   }));
+};
+
+PatternsToCSS.prototype.patternCss = function() {
+  return templates.pages.patterns_css({
+    groups: this.patternData.groups
+  });
 };
 
 module.exports = PatternsToCSS;

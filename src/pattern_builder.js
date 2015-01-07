@@ -1,6 +1,7 @@
 var btoa = require("btoa");
 var d3 = require("d3");
 var fs = require("fs");
+var path = require("path");
 
 var PatternBuilder = function(root) {
 
@@ -15,17 +16,14 @@ var PatternBuilder = function(root) {
 // specific...
 PatternBuilder.prototype._isValid = function(patternGroupName) {
   return (patternGroupName !== ".DS_Store" &&
-    fs.lstatSync(this.root + patternGroupName).isDirectory());
+    fs.lstatSync(path.join(this.root,patternGroupName)).isDirectory());
 };
 
 // generates data for a single pattern
 PatternBuilder.prototype.getSinglePatternData = function(patternGroupName, patternFile) {
 
-  console.log(patternFile);
-  var patternFilePath = this.root + patternGroupName + "/" + patternFile;
+  var patternFilePath = path.join(this.root, patternGroupName, patternFile);
   var patternName = /(.*).svg/.exec(patternFile)[1];
-
-  console.log("Processing " + patternGroupName + ":" + patternName);
 
   // read the svg pattern data from the filesystem
   var pattern = fs.readFileSync(patternFilePath, { encoding: "utf-8" });
@@ -58,7 +56,7 @@ PatternBuilder.prototype.getGroupPatternData = function(patternGroupName) {
       patterns: []
     };
 
-    var patternGroup = fs.readdirSync(self.root + patternGroupName);
+    var patternGroup = fs.readdirSync(path.join(self.root, patternGroupName));
 
     patternGroup.forEach(function(patternFile, patternIndex) {
        var data = self.getSinglePatternData(patternGroupName, patternFile);
@@ -80,7 +78,6 @@ PatternBuilder.prototype.getAllPatternData = function() {
   var processingCount = patternGroups.length - 1; //-.DS_Store
 
   patternGroups.forEach(function(patternGroupName, groupIndex) {
-    console.log(patternGroupName);
     self.getGroupPatternData(patternGroupName);
   });
 

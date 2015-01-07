@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+var PatternBuilder = require('../src/pattern_builder.js');
+var program = require('commander');
+var fs = require('fs');
+program
+  .version('0.2.0')
+  .usage('[options]')
+  .option('-f, --format [value]', 'svg|css (required)')
+  .option('-s, --source [value]', 'pattern/directory (optional. built in patterns used by default)')
+  .option('-d, --dest [value]', 'output file (optional. Will go to stdout otherwise.)');
+
+program.parse(process.argv);
+
+var builder;
+
+if (program.source) {
+  builder = new PatternBuilder(program.source);
+} else {
+  builder = new PatternBuilder("./src/patterns/");
+}
+
+var patterns = builder.getAllPatternData();
+
+var Converter, converterInstance, output;
+if (program.format && program.format === "svg") {
+
+  Converter = require('../src/output/output_svg.js');
+  converterInstance =  new Converter(patterns);
+  output = converterInstance.patternSvg();
+
+} else if (program.format && program.format === "css") {
+
+  Converter = require('../src/output/output_css.js');
+  converterInstance =  new Converter(patterns);
+  output = converterInstance.patternCss();
+
+} else {
+  console.error("Format is required! Pass one using -f or --format. It should be set to 'svg' or 'css'");
+  process.exit(1);
+}
+
+if (!program.dest) {
+  process.stdout.write(output);
+} else {
+  var stream = fs.createWriteStream(program.dest);
+  stream.once('open', function(fd) {
+    stream.write(output);
+    stream.end();
+  });
+}

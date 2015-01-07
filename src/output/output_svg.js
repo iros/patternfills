@@ -57,4 +57,10 @@ PatternsToSVG.prototype.writePages = function() {
   }));
 };
 
+PatternsToSVG.prototype.patternSvg = function() {
+  return this.patternData.groups.map(function(g, i) {
+    return g.svg.join("");
+  }).join("");
+};
+
 module.exports = PatternsToSVG;
