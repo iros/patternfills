@@ -10,6 +10,6 @@
 */
 
 <% for (var i = 0; i < groups.length; i++) { %>
-/* Group: <%= groups[i].groupName %> */
-<%= groups[i].css %>
+/* Group: <%= groups[i].name %> */
+<%= groups[i].css.join("") %>
 <% } %>

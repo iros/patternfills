@@ -1,1 +1,1 @@
-makeRect("<%= name %>", "<%= escapedSVG %>");
+makeRect("<%= name %>", "<%= encodedSVG %>");

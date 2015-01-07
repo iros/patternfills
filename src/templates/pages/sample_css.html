@@ -73,8 +73,8 @@
     </header>
     <div id="samples">
       <% for (var i = 0; i < groups.length; i++) { %>
-        <h2>Group: <%= groups[i].groupName %></h2>
-        <%= groups[i].divSamples %>
+        <h2>Group: <%= groups[i].name %></h2>
+        <%= groups[i].divSamples.join("") %>
       <% } %>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.2.min.js"></script>

@@ -81,7 +81,7 @@ selection.append("rect")
 
     <div id="patterns" style="height:0;">
       <% for (var i = 0; i < groups.length; i++) { %>
-        <%= groups[i].svg %>
+        <%= groups[i].svg.join("") %>
       <% } %>
     </div>
 
@@ -98,7 +98,7 @@ selection.append("rect")
     </script>
     <script>
       var container = d3.select("#samples");
-      function makeRect(name, escapedSVG) {
+      function makeRect(name, encodedSVG) {
         var row = container.append("div")
           .classed("svg_pattern", true);
 
@@ -127,13 +127,13 @@ selection.append("rect")
           .classed("svg_def", true)
           .append("div")
             .classed("code", true)
-            .html(escapedSVG);
+            .html(encodedSVG);
       }
       <% for (var i = 0; i < groups.length; i++) { %>
         container.append("h2")
-          .text('Group: <%= groups[i].groupName %>');
+          .text('Group: <%= groups[i].name %>');
 
-        <%= groups[i].d3Samples %>
+        <%= groups[i].d3Samples.join("") %>
       <% } %>
     </script>
   </body>
