@@ -16,7 +16,7 @@ var PatternBuilder = function(root) {
 // specific...
 PatternBuilder.prototype._isValid = function(patternGroupName) {
   return (patternGroupName !== ".DS_Store" &&
-    fs.lstatSync(path.join(this.root,patternGroupName)).isDirectory());
+    fs.lstatSync(path.join(__dirname, this.root,patternGroupName)).isDirectory());
 };
 
 // generates data for a single pattern
@@ -26,7 +26,8 @@ PatternBuilder.prototype.getSinglePatternData = function(patternGroupName, patte
   var patternName = /(.*).svg/.exec(patternFile)[1];
 
   // read the svg pattern data from the filesystem
-  var pattern = fs.readFileSync(patternFilePath, { encoding: "utf-8" });
+  var pattern = fs.readFileSync(
+    path.join(__dirname, patternFilePath), { encoding: "utf-8" });
 
   // base64 encode th pattern
   var b64 = btoa(pattern);
@@ -56,7 +57,7 @@ PatternBuilder.prototype.getGroupPatternData = function(patternGroupName) {
       patterns: []
     };
 
-    var patternGroup = fs.readdirSync(path.join(self.root, patternGroupName));
+    var patternGroup = fs.readdirSync(path.join(__dirname, self.root, patternGroupName));
 
     patternGroup.forEach(function(patternFile, patternIndex) {
        var data = self.getSinglePatternData(patternGroupName, patternFile);
@@ -73,8 +74,7 @@ PatternBuilder.prototype.getGroupPatternData = function(patternGroupName) {
 // aggregates all the patterns in a folder
 PatternBuilder.prototype.getAllPatternData = function() {
   var self = this;
-
-  var patternGroups = fs.readdirSync(self.root);
+  var patternGroups = fs.readdirSync(path.join(__dirname, self.root));
   var processingCount = patternGroups.length - 1; //-.DS_Store
 
   patternGroups.forEach(function(patternGroupName, groupIndex) {

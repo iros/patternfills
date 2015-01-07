@@ -4,7 +4,7 @@ var PatternsToSVG = require(__dirname + '/output/output_svg.js');
 var PatternsToD3 = require(__dirname + '/output/output_d3.js');
 var PatternsToIndex = require(__dirname + '/output/output_index.js');
 
-var builder = new PatternBuilder("src/patterns/");
+var builder = new PatternBuilder("patterns/");
 
 // build all pattern data.
 var patterns = builder.getAllPatternData();

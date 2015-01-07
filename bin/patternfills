@@ -16,7 +16,7 @@ var builder;
 if (program.source) {
   builder = new PatternBuilder(program.source);
 } else {
-  builder = new PatternBuilder("src/patterns/");
+  builder = new PatternBuilder("../src/patterns/");
 }
 
 var patterns = builder.getAllPatternData();
