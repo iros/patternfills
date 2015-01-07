@@ -107,5 +107,4 @@ Currently some of our patterns are:
 ![patterns](http://i.gyazo.com/b52c5ed993b7d091805a6b8ae53f7a6e.png "patterns")
 
 But you should check them all out at http://iros.github.io/patternfills/
-Thanks
-- @iros.
+
