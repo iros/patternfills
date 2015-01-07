@@ -6,7 +6,7 @@ var ent = require("ent");
 var templates = {
   // index file
   pages: {
-    index: templifyPath("./src/templates/pages/index.html"),
+    index: templifyPath("pages/index.html"),
   }
 };
 

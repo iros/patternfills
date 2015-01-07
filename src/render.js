@@ -1,10 +1,10 @@
-var PatternBuilder = require('./pattern_builder.js');
-var PatternsToCSS = require('./output/output_css.js');
-var PatternsToSVG = require('./output/output_svg.js');
-var PatternsToD3 = require('./output/output_d3.js');
-var PatternsToIndex = require('./output/output_index.js');
+var PatternBuilder = require(__dirname + '/pattern_builder.js');
+var PatternsToCSS = require(__dirname + '/output/output_css.js');
+var PatternsToSVG = require(__dirname + '/output/output_svg.js');
+var PatternsToD3 = require(__dirname + '/output/output_d3.js');
+var PatternsToIndex = require(__dirname + '/output/output_index.js');
 
-var builder = new PatternBuilder("./src/patterns/");
+var builder = new PatternBuilder("src/patterns/");
 
 // build all pattern data.
 var patterns = builder.getAllPatternData();

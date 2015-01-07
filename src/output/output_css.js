@@ -6,18 +6,18 @@ var ent = require("ent");
 var templates = {
   // css class template
   pattern : {
-    css: templifyPath("./src/templates/css/pattern.css")
+    css: templifyPath("css/pattern.css")
   },
 
   // div using the css class template
   components: {
-    div: templifyPath("./src/templates/css/div.html"),
+    div: templifyPath("css/div.html"),
   },
 
   // css file
   pages: {
-    patterns_css: templifyPath("./src/templates/pages/patterns.css"),
-    css: templifyPath("./src/templates/pages/sample_css.html")
+    patterns_css: templifyPath("pages/patterns.css"),
+    css: templifyPath("pages/sample_css.html")
   }
 };
 

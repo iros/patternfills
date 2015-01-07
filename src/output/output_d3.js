@@ -6,17 +6,17 @@ var ent = require("ent");
 var templates = {
   // css class template
   pattern : {
-    svg: templifyPath("./src/templates/svg/pattern.svg")
+    svg: templifyPath("svg/pattern.svg")
   },
 
   // div using the css class template
   components: {
-    d3Snippet: templifyPath("./src/templates/d3/d3Snippet.js")
+    d3Snippet: templifyPath("d3/d3Snippet.js")
   },
 
   // css file
   pages: {
-    d3: templifyPath("./src/templates/pages/sample_d3.html")
+    d3: templifyPath("pages/sample_d3.html")
   }
 };
 
