@@ -16,17 +16,35 @@ To view any of the patterns, one must build the sample files. There are three of
 * `public/sample_css.html` - a sample of using the patterns after they are converted to css image urls. See the accompanying `pattern.css`.
 * `public/sample_d3.html` - a sample of d3 code that generates the same exact output that `sample_svg.html` does, but using d3.js.
 
-## Building sample files:
+## Using the patterns
 
-To build the sample files, first setup your dev environment:
+### Website
 
-`npm install`
+You can use the patterns as indicated via the website:
 
-Then run the render task:
+* By downloading the `pattern.css` file
+* Copying individual CSS / SVG snippets into your source
 
-`grunt render` or simply `grunt`.
+### NPM
 
-The files will be built and put into the `public` folder. If you don't intend to customize the patterns or add new ones, you can simply look at the generated code and use it for your own needs.
+You can install patternfills via npm like so:
+
+`npm install patternfills`
+
+It comes with an executable that will allow you to produce the CSS classes or the SVG classes and save them to an appropriate file. This might come in handy when you want to integrate patternfills into
+your build process.
+
+To produce either the css or svg you can run:
+
+`./bin/patternfills --format=svg|css`
+
+You can provide a destination like so
+
+`./bin/patternfills --format=svg|css --dest=your/path`
+
+And even point to a different pattern set like this:
+
+`./bin/patternfills --format=svg|css --source=your/patterns`
 
 ## How do patterns work?
 
@@ -97,6 +115,10 @@ From the other run:
 `grunt connect` - this will fire up a server on localhost running on port 8000. Navigate to that url to one of the sample files you wish to see (http://localhost:8000/sample_svg.html, http://localhost:8000/sample_d3.html or http://localhost:8000/sample_css.html).
 
 The project is setup with live reloading, so that any time you modify any of the pattern files you will see your page automatically reload.
+
+You can build the website any time by just calling `grunt render` or simply `grunt`.
+
+The files will be built and put into the `public` folder. If you don't intend to customize the patterns or add new ones, you can simply look at the generated code and use it for your own needs.
 
 ## Submitting patterns
 
