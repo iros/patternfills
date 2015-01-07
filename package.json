@@ -18,7 +18,7 @@
     "uri": "https://github.com/iros"
   },
   "bin": {
-    "patternfills": "bin/patternfills.js"
+    "patternfills": "bin/patternfills"
   },
   "license": "MIT Expat",
   "devDependencies": {
