@@ -24,6 +24,7 @@
   "dependencies": {
     "btoa": "~1.1.1",
     "commander": "^2.6.0",
+    "d3": "^3.5.3",
     "ent": "^2.0.0",
     "underscore": "~1.5.2"
   },
