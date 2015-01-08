@@ -34,6 +34,21 @@
         display: inline-block;
         float:left;
       }
+      ul {
+
+      }
+
+      li {
+        margin-bottom:10px;
+      }
+
+      code {
+        padding: 2px;
+        padding-left:5px;
+        padding-right:5px;
+        background-color: #eee;
+      }
+
       footer {
         background-color: #eee;
         text-align: center;
@@ -133,6 +148,46 @@
     <p>
       For the SVG form of the patterns, you should look at <code>public/sample_svg.html</code> to view the actual compiled pattern svg definitions.
     </p>
+
+    <h2>Can I use these programatically?</h2>
+
+    <p>
+      Yep! If you'd like to use Pattern Fills in your application. You can install patternfills via npm like so:
+    </p>
+
+    <p><code>npm install patternfills</code></p>
+
+    <p>
+      It comes with an executable that will allow you to produce the CSS classes or the SVG classes and save them to an appropriate file. This might come in handy when you want to integrate patternfills into
+      your build process.
+    </p>
+
+    <p>
+
+      <ul>
+        <li>
+          To produce either the css or svg you can run:
+          <br>
+          <code>./bin/patternfills --format=svg|css</code>
+        </li>
+        <li>
+          You can provide an alternate source pattern directory. This is
+          optional.
+          <br>
+          <code>./bin/patternfills --format=svg|css --source=your/patterns</code>
+          <br>
+          You'll want to follow a similar folder organization scheme to ours, so
+          be sure to look at <code>src/patterns</code>.
+        </li>
+
+        <li>
+          You can provide a destination file path. Otherwise your output will be piped to <code>stdout</code>.
+          <br>
+          <code>./bin/patternfills --format=svg|css --dest=your/path</code>
+        </li>
+      </ul>
+    </p>
+
 
     <h2>How do I add patterns?</h2>
 
