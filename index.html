@@ -155,10 +155,18 @@
       Yep! If you'd like to use Pattern Fills in your application. You can install patternfills via npm like so:
     </p>
 
-    <p><code>npm install patternfills</code></p>
+    <p><code>npm install --save patternfills</code></p>
+
+    <h2>Can I use these from the command line?</h2>
 
     <p>
-      It comes with an executable that will allow you to produce the CSS classes or the SVG classes and save them to an appropriate file. This might come in handy when you want to integrate patternfills into
+      You betcha! If you'd like to use Pattern Fills from the command line, you can install the library globally via npm like so:
+    </p>
+
+    <p><code>npm install -g patternfills</code></p>
+
+    <p>
+      The executable will allow you to produce the CSS classes or the SVG classes and save them to an appropriate file. This might come in handy when you want to integrate patternfills into
       your build process.
     </p>
 
@@ -168,13 +176,13 @@
         <li>
           To produce either the css or svg you can run:
           <br>
-          <code>./bin/patternfills --format=svg|css</code>
+          <code>patternfills --format=svg|css</code>
         </li>
         <li>
           You can provide an alternate source pattern directory. This is
           optional.
           <br>
-          <code>./bin/patternfills --format=svg|css --source=your/patterns</code>
+          <code>patternfills --format=svg|css --source=your/patterns</code>
           <br>
           You'll want to follow a similar folder organization scheme to ours, so
           be sure to look at <code>src/patterns</code>.
@@ -183,7 +191,7 @@
         <li>
           You can provide a destination file path. Otherwise your output will be piped to <code>stdout</code>.
           <br>
-          <code>./bin/patternfills --format=svg|css --dest=your/path</code>
+          <code>patternfills --format=svg|css --dest=your/path</code>
         </li>
       </ul>
     </p>
