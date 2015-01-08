@@ -29,22 +29,22 @@ You can use the patterns as indicated via the website:
 
 You can install patternfills via npm like so:
 
-`npm install patternfills`
+`npm install -g patternfills`
 
 It comes with an executable that will allow you to produce the CSS classes or the SVG classes and save them to an appropriate file. This might come in handy when you want to integrate patternfills into
 your build process.
 
 To produce either the css or svg you can run:
 
-`./bin/patternfills --format=svg|css`
+`patternfills --format=svg|css`
 
 You can provide a destination like so
 
-`./bin/patternfills --format=svg|css --dest=your/path`
+`patternfills --format=svg|css --dest=your/path`
 
 And even point to a different pattern set like this:
 
-`./bin/patternfills --format=svg|css --source=your/patterns`
+`patternfills --format=svg|css --source=your/patterns`
 
 ## How do patterns work?
 
