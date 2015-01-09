@@ -1,10 +1,24 @@
-var PatternBuilder = require(__dirname + '/pattern_builder.js');
-var PatternsToCSS = require(__dirname + '/output/output_css.js');
-var PatternsToSVG = require(__dirname + '/output/output_svg.js');
-var PatternsToD3 = require(__dirname + '/output/output_d3.js');
-var PatternsToIndex = require(__dirname + '/output/output_index.js');
+var PatternBuilder = require('./pattern_builder');
+var PatternsToCSS = require('./output/output_css');
+var PatternsToSVG = require('./output/output_svg');
+var PatternsToD3 = require('./output/output_d3');
+var PatternsToIndex = require('./output/output_index');
 
-var builder = new PatternBuilder("patterns/");
+// determine colors
+var background = 'red';
+var foreground = 'blue';
+
+if (process.argv[2] !== 'undefined') {
+  background =  process.argv[2];
+}
+
+if (process.argv[3] !== 'undefined') {
+  foreground =  process.argv[3];
+}
+
+var builder = new PatternBuilder("patterns/", {
+  background: background, foreground: foreground
+});
 
 // build all pattern data.
 var patterns = builder.getAllPatternData();
