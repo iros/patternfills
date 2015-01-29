@@ -1,5 +1,7 @@
 # PatternFills
 
+[![Join the chat at https://gitter.im/iros/patternfills](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/iros/patternfills?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 See the live site here: http://iros.github.io/patternfills/
 
 This is a collection of svg-based pattern fills that can be used both as SVG patterns defs and CSS background image urls. There is also an example of how one might use pattern fills with d3.js.
