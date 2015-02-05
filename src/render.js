@@ -5,8 +5,8 @@ var PatternsToD3 = require('./output/output_d3');
 var PatternsToIndex = require('./output/output_index');
 
 // determine colors
-var background = 'red';
-var foreground = 'blue';
+var background = 'white';
+var foreground = 'black';
 
 if (process.argv[2] !== 'undefined') {
   background =  process.argv[2];
