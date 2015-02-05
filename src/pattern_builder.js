@@ -2,13 +2,20 @@ var btoa = require("btoa");
 var d3 = require("d3");
 var fs = require("fs");
 var path = require("path");
+var _ = require("underscore");
 
-var PatternBuilder = function(root) {
+var PatternBuilder = function(root, options) {
 
   this.root = root;
   this.patterns = [];     // cache all data
   this.patternNames = []; // cache names
   this.groups = [];       // cache patterns with their groups
+
+  this.colors = {
+    foreground : options.foreground || '#ffffff',
+    background : options.background || '#000000'
+  };
+
 };
 
 // Determines if a pattern group is valid. It needs to be a directory
@@ -28,6 +35,9 @@ PatternBuilder.prototype.getSinglePatternData = function(patternGroupName, patte
   // read the svg pattern data from the filesystem
   var pattern = fs.readFileSync(
     path.join(__dirname, patternFilePath), { encoding: "utf-8" });
+
+  // compile the pattern with the colors
+  pattern = _.template(pattern, this.colors);
 
   // base64 encode th pattern
   var b64 = btoa(pattern);

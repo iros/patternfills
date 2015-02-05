@@ -4,9 +4,12 @@ module.exports = function(grunt) {
 
     var done = this.async();
 
+    var backgroundColor = grunt.option('background');
+    var foregroundColor = grunt.option('foreground');
+
     var child = grunt.util.spawn({
       cmd: process.argv[0], // <- A better way to find the node binary
-      args: ['src/render.js']
+      args: ['src/render.js', backgroundColor, foregroundColor]
     }, function() {
       done();
     });

@@ -3,20 +3,33 @@ var PatternBuilder = require('../src/pattern_builder.js');
 var program = require('commander');
 var fs = require('fs');
 program
-  .version('0.2.1')
+  .version('0.3')
   .usage('[options]')
+
+  // format of output
   .option('-f, --format [value]', 'svg|css (required)')
+
+  // input patterns
   .option('-s, --source [value]', 'pattern/directory (optional. built in patterns used by default)')
-  .option('-d, --dest [value]', 'output file (optional. Will go to stdout otherwise.)');
+
+  // output patterns
+  .option('-d, --dest [value]', 'output file (optional. Will go to stdout otherwise.)')
+
+  // color customization
+  .option('-b, --background [value]', 'background color (optional. white by default)')
+  .option('-g, --foreground [value]', 'foreground color (optional. black by default)');
 
 program.parse(process.argv);
 
-var builder;
+var colors = {};
+if (program.background) colors.background = program.background;
+if (program.foreground) colors.foreground = program.foreground;
 
+var builder;
 if (program.source) {
-  builder = new PatternBuilder(program.source);
+  builder = new PatternBuilder(program.source, colors);
 } else {
-  builder = new PatternBuilder("../src/patterns/");
+  builder = new PatternBuilder("../src/patterns/", colors);
 }
 
 var patterns = builder.getAllPatternData();
