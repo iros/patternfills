@@ -1,5 +1,6 @@
 <svg width='10' height='10' xmlns='http://www.w3.org/2000/svg'>
-  <path d='M0 0L4 4' stroke='#aaa' fill='#aaa' stroke-width='1'/>
-  <path d='M2.5 0L5 2.5L5 5L9 9L5 5L10 5L10 0' stroke='#aaa' fill='#aaa' stroke-width='1'/>
-  <path d='M5 10L5 7.5L7.5 10' stroke='#aaa' fill='#aaa' stroke-width='1'/>
+	<rect width='10' height='10' fill='<%= background %>'/>
+  <path d='M0 0L4 4' stroke='<%= foreground %>' fill='<%= foreground %>' stroke-width='1'/>
+  <path d='M2.5 0L5 2.5L5 5L9 9L5 5L10 5L10 0' stroke='<%= foreground %>' fill='<%= foreground %>' stroke-width='1'/>
+  <path d='M5 10L5 7.5L7.5 10' stroke='<%= foreground %>' fill='<%= foreground %>' stroke-width='1'/>
 </svg>

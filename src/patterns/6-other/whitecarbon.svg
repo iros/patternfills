@@ -1,8 +1,8 @@
 <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='6' height='6'>
-  <rect width='6' height='6' fill='#eeeeee'/>
+  <rect width='6' height='6' fill='<%= background %>'/>
   <g id='c'>
     <rect width='3' height='3' fill='#e6e6e6'/>
-    <rect y='1' width='3' height='2' fill='#d8d8d8'/>
+    <rect y='1' width='3' height='2' fill='<%= foreground %>'/>
   </g>
   <use xlink:href='#c' x='3' y='3'/>
 </svg>

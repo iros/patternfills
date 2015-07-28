@@ -1,4 +1,4 @@
 <svg xmlns='http://www.w3.org/2000/svg' width='6' height='49'>
-  <rect width='3' height='50' fill='#fff'/>
-  <rect x='3' width='1' height='50' fill='#ccc'/>
+  <rect width='3' height='50' fill='<%= background %>'/>
+  <rect x='3' width='1' height='50' fill='<%= foreground %>'/>
 </svg>
