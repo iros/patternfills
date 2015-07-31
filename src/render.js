@@ -16,7 +16,7 @@ if (process.argv[3] !== 'undefined') {
   foreground =  process.argv[3];
 }
 
-var builder = new PatternBuilder("patterns/", {
+var builder = new PatternBuilder("src/patterns/", {
   background: background, foreground: foreground
 });
 

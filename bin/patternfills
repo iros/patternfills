@@ -2,8 +2,10 @@
 var PatternBuilder = require('../src/pattern_builder.js');
 var program = require('commander');
 var fs = require('fs');
+var path = require('path');
+
 program
-  .version('0.3')
+  .version('0.3.1')
   .usage('[options]')
 
   // format of output
@@ -25,13 +27,18 @@ var colors = {};
 if (program.background) colors.background = program.background;
 if (program.foreground) colors.foreground = program.foreground;
 
-var builder;
+var source;
 if (program.source) {
-  builder = new PatternBuilder(program.source, colors);
+  if ( ! path.isAbsolute(program.source) ) {
+    source = path.resolve( process.cwd(), program.source );
+  } else {
+    source = program.source;    
+  }
 } else {
-  builder = new PatternBuilder("../src/patterns/", colors);
+  source = path.join(__dirname, "../src/patterns/");
 }
 
+var builder = new PatternBuilder(source, colors);
 var patterns = builder.getAllPatternData();
 
 var Converter, converterInstance, output;
