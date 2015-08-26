@@ -9,13 +9,13 @@ program
   .usage('[options]')
 
   // format of output
-  .option('-f, --format [value]', 'svg|css (required)')
+  .option('-f, --format [value]', 'svg|css|files (required)')
 
   // input patterns
   .option('-s, --source [value]', 'pattern/directory (optional. built in patterns used by default)')
 
   // output patterns
-  .option('-d, --dest [value]', 'output file (optional. Will go to stdout otherwise.)')
+  .option('-d, --dest [value]', 'output file or directory for files (optional. Will go to stdout otherwise.)')
 
   // color customization
   .option('-b, --background [value]', 'background color (optional. white by default)')
@@ -32,7 +32,7 @@ if (program.source) {
   if ( ! path.isAbsolute(program.source) ) {
     source = path.resolve( process.cwd(), program.source );
   } else {
-    source = program.source;    
+    source = program.source;
   }
 } else {
   source = path.join(__dirname, "../src/patterns/");
@@ -40,7 +40,7 @@ if (program.source) {
 
 var builder = new PatternBuilder(source, colors);
 var patterns = builder.getAllPatternData();
-
+var skipwrite = false;
 var Converter, converterInstance, output;
 if (program.format && program.format === "svg") {
 
@@ -54,14 +54,22 @@ if (program.format && program.format === "svg") {
   converterInstance =  new Converter(patterns);
   output = converterInstance.patternCss();
 
+} else if (program.format && program.format === "files") {
+
+  Converter = require('../src/output/output_svg.js');
+  converterInstance =  new Converter(patterns);
+
+  converterInstance.writeFiles(program.dest);
+  skipwrite = true;
+
 } else {
   console.error("Format is required! Pass one using -f or --format. It should be set to 'svg' or 'css'");
   process.exit(1);
 }
 
-if (!program.dest) {
+if (!program.dest & !skipwrite) {
   process.stdout.write(output);
-} else {
+} else if (!skipwrite) {
   var stream = fs.createWriteStream(program.dest);
   stream.once('open', function(fd) {
     stream.write(output);

@@ -34,17 +34,20 @@ You can install patternfills via npm like so:
 It comes with an executable that will allow you to produce the CSS classes or the SVG classes and save them to an appropriate file. This might come in handy when you want to integrate patternfills into
 your build process.
 
-To produce either the css or svg you can run:
+To produce either the css, svg or a set of svg files you can run:
 
-`patternfills --format=svg|css`
+`patternfills --format=svg|css|files`
 
 You can provide a destination like so
 
-`patternfills --format=svg|css --dest=your/path`
+`patternfills --format=svg|css|files --dest=your/path`
+
+Note that if you are outputing files you need to provide a folder.
+Otherwise you need to provide a single file name.
 
 And even point to a different pattern set like this:
 
-`patternfills --format=svg|css --source=your/patterns`
+`patternfills --format=svg|css|files --source=your/patterns`
 
 ## How do patterns work?
 

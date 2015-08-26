@@ -57,6 +57,14 @@ PatternsToSVG.prototype.writePages = function() {
   }));
 };
 
+PatternsToSVG.prototype.writeFiles = function(dir) {
+  console.log("Writing svg files");
+  var self = this;
+  this.patternData.patternNames.forEach(function(name, idx) {
+    writeOutFile(dir + "/" + name + ".svg", self.patternData.patterns[idx].pattern);
+  });
+};
+
 PatternsToSVG.prototype.patternSvg = function() {
   return this.patternData.groups.map(function(g, i) {
     return g.svg.join("");

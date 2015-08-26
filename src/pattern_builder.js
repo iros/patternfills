@@ -1,5 +1,6 @@
 var btoa = require("btoa");
 var d3 = require("d3");
+var jsdom = require("jsdom");
 var fs = require("fs");
 var path = require("path");
 var _ = require("underscore");
@@ -43,7 +44,9 @@ PatternBuilder.prototype.getSinglePatternData = function(patternGroupName, patte
   b64 = "data:image/svg+xml;base64," + b64;
 
   // make a mock node with d3 for the pattern, and get its dimensions.
-  var mockNode = d3.select("body").html(pattern);
+  var document = jsdom.jsdom(),
+      mockNode = d3.select(document.body).html(pattern);
+
   var height = mockNode.select("svg").attr("height");
   var width = mockNode.select("svg").attr("width");
 
@@ -51,7 +54,8 @@ PatternBuilder.prototype.getSinglePatternData = function(patternGroupName, patte
     height: height,
     width: width,
     name: patternName,
-    imagedata: b64
+    imagedata: b64,
+    pattern: pattern
   };
 };
 

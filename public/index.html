@@ -193,18 +193,10 @@
       Yep! If you'd like to use Pattern Fills in your application. You can install patternfills via npm like so:
     </p>
 
-    <p><code>npm install --save patternfills</code></p>
-
-    <h2>Can I use these from the command line?</h2>
+    <p><code>npm install patternfills</code></p>
 
     <p>
-      You betcha! If you'd like to use Pattern Fills from the command line, you can install the library globally via npm like so:
-    </p>
-
-    <p><code>npm install -g patternfills</code></p>
-
-    <p>
-      The executable will allow you to produce the CSS classes or the SVG classes and save them to an appropriate file. This might come in handy when you want to integrate patternfills into
+      It comes with an executable that will allow you to produce the CSS classes or the SVG classes and save them to an appropriate file. This might come in handy when you want to integrate patternfills into
       your build process.
     </p>
 
@@ -214,13 +206,13 @@
         <li>
           To produce either the css or svg you can run:
           <br>
-          <code>patternfills --format=svg|css</code>
+          <code>./bin/patternfills --format=svg|css</code>
         </li>
         <li>
           You can provide an alternate source pattern directory. This is
           optional.
           <br>
-          <code>patternfills --format=svg|css --source=your/patterns</code>
+          <code>./bin/patternfills --format=svg|css --source=your/patterns</code>
           <br>
           You'll want to follow a similar folder organization scheme to ours, so
           be sure to look at <code>src/patterns</code>.
@@ -229,7 +221,7 @@
         <li>
           You can provide a destination file path. Otherwise your output will be piped to <code>stdout</code>.
           <br>
-          <code>patternfills --format=svg|css --dest=your/path</code>
+          <code>./bin/patternfills --format=svg|css --dest=your/path</code>
         </li>
       </ul>
     </p>
@@ -277,7 +269,7 @@
         return array;
       }
 
-      var availablePatterns = ["circles-1","circles-2","circles-3","circles-4","circles-5","circles-6","circles-7","circles-8","circles-9","diagonal-stripe-1","diagonal-stripe-2","diagonal-stripe-3","diagonal-stripe-4","diagonal-stripe-5","diagonal-stripe-6","dots-1","dots-2","dots-3","dots-4","dots-5","dots-6","dots-7","dots-8","dots-9","horizontal-stripe-1","horizontal-stripe-2","horizontal-stripe-3","horizontal-stripe-4","horizontal-stripe-5","horizontal-stripe-6","horizontal-stripe-7","horizontal-stripe-8","horizontal-stripe-9","vertical-stripe-1","vertical-stripe-2","vertical-stripe-3","vertical-stripe-4","vertical-stripe-5","vertical-stripe-6","vertical-stripe-7","vertical-stripe-8","vertical-stripe-9","crosshatch","houndstooth","lightstripe","smalldot","verticalstripe","whitecarbon"];
+      var availablePatterns = ["circles-1","circles-2","circles-3","circles-4","circles-5","circles-6","circles-7","circles-8","circles-9","diagonal-stripe-1","diagonal-stripe-2","diagonal-stripe-3","diagonal-stripe-4","diagonal-stripe-5","diagonal-stripe-6","dots-1","dots-2","dots-3","dots-4","dots-5","dots-6","dots-7","dots-8","dots-9","horizontal-stripe-1","horizontal-stripe-2","horizontal-stripe-3","horizontal-stripe-4","horizontal-stripe-5","horizontal-stripe-6","horizontal-stripe-7","horizontal-stripe-8","horizontal-stripe-9","vertical-stripe-1","vertical-stripe-2","vertical-stripe-3","vertical-stripe-4","vertical-stripe-5","vertical-stripe-6","vertical-stripe-7","vertical-stripe-8","vertical-stripe-9","crosshatch","houndstooth","lightstripe","smalldot","subtle-patch","verticalstripe","whitecarbon"];
       var samples = d3.select("#header_samples");
 
       var divBinding = samples.selectAll("div.sample")
