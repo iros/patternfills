@@ -44,7 +44,7 @@ PatternBuilder.prototype.getSinglePatternData = function(patternGroupName, patte
   b64 = "data:image/svg+xml;base64," + b64;
 
   // make a mock node with d3 for the pattern, and get its dimensions.
-  var document = jsdom.jsdom(),
+  var document = new jsdom.JSDOM().window.document,
       mockNode = d3.select(document.body).html(pattern);
 
   var height = mockNode.select("svg").attr("height");
