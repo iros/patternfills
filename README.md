@@ -107,7 +107,7 @@ Then simply use the class name:
 
 First, set up your development environemnt, if you haven't already:
 
-`npm install`
+`yarn install`
 
 Then open two terminal windows, both at the root of this repository. From one, run:
 
