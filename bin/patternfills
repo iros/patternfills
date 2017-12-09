@@ -5,7 +5,7 @@ var fs = require('fs');
 var path = require('path');
 
 program
-  .version('0.3.1')
+  .version('0.4.1')
   .usage('[options]')
 
   // format of output
