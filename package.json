@@ -22,11 +22,11 @@
   },
   "license": "MIT Expat",
   "dependencies": {
-    "btoa": "*",
+    "btoa": "1.1.2",
     "commander": "^2.6.0",
     "d3": "~3.5.6",
     "ent": "^2.0.0",
-    "jsdom": "*",
+    "jsdom": "11.5.1",
     "underscore": "~1.5.2"
   },
   "devDependencies": {
