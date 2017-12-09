@@ -6,7 +6,7 @@ var PatternsToIndex = require('./output/output_index');
 
 // determine colors
 var background = 'white';
-var foreground = 'black';
+var foreground = '#5594e7';
 
 if (process.argv[2] !== 'undefined') {
   background =  process.argv[2];

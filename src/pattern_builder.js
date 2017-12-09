@@ -1,9 +1,11 @@
 var btoa = require("btoa");
 var d3 = require("d3");
-var jsdom = require("jsdom");
+const jsdom = require("jsdom");
 var fs = require("fs");
 var path = require("path");
 var _ = require("underscore");
+
+const { JSDOM } = jsdom;
 
 var PatternBuilder = function(root, options) {
 
@@ -13,7 +15,7 @@ var PatternBuilder = function(root, options) {
   this.groups = [];       // cache patterns with their groups
 
   this.colors = {
-    foreground : options.foreground || '#ffffff',
+    foreground : options.foreground || '#5594e7',
     background : options.background || '#000000'
   };
 
@@ -44,8 +46,9 @@ PatternBuilder.prototype.getSinglePatternData = function(patternGroupName, patte
   b64 = "data:image/svg+xml;base64," + b64;
 
   // make a mock node with d3 for the pattern, and get its dimensions.
-  var document = jsdom.jsdom(),
-      mockNode = d3.select(document.body).html(pattern);
+  var document = (new JSDOM(`<!DOCTYPE html><body></body></html>`, {pretendToBeVisual: true})).window.document;
+  var  mockNode = d3.select(document.body).html(pattern);
+  console.log(patternName);
 
   var height = mockNode.select("svg").attr("height");
   var width = mockNode.select("svg").attr("width");

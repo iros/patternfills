@@ -13,6 +13,6 @@ module.exports = function(grunt) {
   grunt.loadTasks('build');
 
 
-  grunt.registerTask("dev", ["connect", "watch"]);
+  grunt.registerTask("dev", ["watch"]);
   grunt.registerTask("default", ["render", "copy"]);
 };
